@@ -1,5 +1,5 @@
 window.cnblogsConfig = {
-    GhVersions    : 'v1.1', // 版本
+    GhVersions    : 'v1.1.1', // 版本
     blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
     blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
     blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
@@ -104,7 +104,7 @@ if (initCheck()) {
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
-        GhVersions: 'v1.1',   //GitHub发布版本或提交哈希值，根据版本加载代码。
+        GhVersions: 'v1.1.1',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
         isVersionMapping: true,
 		codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
@@ -360,12 +360,12 @@ if (initCheck()) {
             left: "☞ bug全无",
             right: "测试全过 ☜"
         },
-        footerStyle: 1,//页脚样式，有1和2
+        footerStyle: 1,//页脚样式，有1和2,3
         consoleList: [
             ['君纤 CNBlogs', 'https://www.cnblogs.com/asio']
         ],//控制台输出
         bookList: [ ],
-        themeAuthor: false,   /是否显示主题作者
+        themeAuthor: false,   //是否显示主题作者
         isVersionMapping: false     //是否版本映射
         /*
         *关于转载文章在Html源码中加入如下代码来指定文章作者和来源：

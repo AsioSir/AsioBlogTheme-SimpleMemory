@@ -675,6 +675,30 @@ function Base() {
 
         // v1 页脚裙底
         function init_t1() {
+            $('#footer').css({
+                'min-height': '130px',
+                '_height': '15px',
+                'position': 'absolute',
+                'margin': '200px 0 0 0',
+                'left': '0',
+                'right': '0',
+                'background': '#232323',
+                'padding': '17px 0 27px',
+                'text-align': 'center',
+                'color': '#888',
+                'font-size': '12px',
+                'line-height': '1.5',
+            });
+
+            $('.footer-image').css({
+                'background': 'url(https://gitee.com/dbnuo/Cnblogs-Theme-SimpleMemory/raw/master/img/webp/footer.webp) no-repeat 50%',
+                'height': '368px',
+                'z-index': '1',
+                'position': 'absolute',
+                'bottom': '100px',
+                'width': '100%',
+                'pointer-events': 'none'
+            });
             $('#footer').prepend('<div class="footer-image"></div>').addClass('footer-t1');
         }
 
