@@ -1,8 +1,11 @@
-/*!
- * UPDATES AND DOCS AT: https://github.com/BNDong
- * https://www.cnblogs.com/bndong/
- * @author: BNDong, dbnuo@foxmail.com
- **/
+window.cnblogsConfig = {
+    GhVersions    : 'v1.1', // 版本
+    blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
+    blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
+    blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
+}
+
+
 if (initCheck()) {
 
     var sidebarHtml =
@@ -33,15 +36,12 @@ if (initCheck()) {
         '            <!-- 最新随笔 -->' +
         '            <div class="m-list-title"><span>最新随笔<span class="iconfont icon-select m-list-title-select"></span></span></div>' +
         '            <div class="m-icon-list" id="sb-sidebarRecentposts"></div>' +
-        '            <!-- 我的标签 -->' +
-        '            <div class="m-list-title"><span>我的标签<span class="iconfont icon-select m-list-title-select"></span></span></div>' +
-        '            <div class="m-icon-list" id="sb-toptags"></div>' +
         '            <!-- 随笔分类 -->' +
         '            <div class="m-list-title"><span>随笔分类<span class="iconfont icon-select m-list-title-select"></span></span></div>' +
         '            <div class="m-icon-list" id="sb-classify"></div>' +
-        '            <!-- 文章分类 -->' +
-        '            <div class="m-list-title"><span>文章分类<span class="iconfont icon-select m-list-title-select"></span></span></div>' +
-        '            <div class="m-icon-list" id="sb-ArticleCategory"></div>' +
+        '            <!-- 我的标签 -->' +
+        '            <div class="m-list-title"><span>我的标签<span class="iconfont icon-select m-list-title-select"></span></span></div>' +
+        '            <div class="m-icon-list" id="sb-toptags"></div>' +
         '            <!-- 阅读排行 -->' +
         '            <div class="m-list-title"><span>阅读排行<span class="iconfont icon-select m-list-title-select"></span></span></div>' +
         '            <div class="m-icon-list" id="sb-topview"></div>' +
@@ -72,9 +72,20 @@ if (initCheck()) {
         '</div>' +
         '<div class="main-header">' +
         '    <canvas id="notHomeTopCanvas"></canvas>' +
+        '            <!-- 切换主题按钮 -->' +
+        '    <div class="TButton clearfix" id="TButton">'+
+        '         <div id="Tday">day</div>'+
+        '         <div class="ckbx-style-13" id="ckbx-style-13">'+
+        '             <input name="ckbx-style-13" id="ckbx-style-13-1" type="checkbox" value="0">'+
+        '             <label id="btnLabel" for="ckbx-style-13-1"></label>'+
+        '         </div>'+
+        '         <div id="TNight">night</div>'+
+        '    </div>'+
+        '            <!-- 切换主题按钮 -->' +
         '    <div class="vertical">' +
         '        <div class="main-header-content inner">' +
-        '            <h1 class="page-title" id="homeTopTitle"></h1>' +
+        '            <link href="https://fonts.proxy.ustclug.org/css?family=Playball" rel="stylesheet">' +
+        '            <h1 class="page-title" style="font-family: \'Playball\', cursive;" id="homeTopTitle"></h1>' +
         '            <h2 class="page-description" id="hitokoto"></h2>' +
         '            <h3 class="page-author" id="hitokotoAuthor"></h3>' +
         '            <h1 class="sb-title" id="sbTitle"></h1>' +
@@ -91,29 +102,45 @@ if (initCheck()) {
         '<div id="rightMenu"></div>';
 
     window.cnblogsConfigDefault = {
-        GhUserName: 'BNDong',
-        GhRepositories: 'Cnblogs-Theme-SimpleMemory',
-        GhVersions: 'v1.2.3',
+        GhUserName: 'AsioSir',   //GitHub用户名
+        GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
+        GhVersions: 'v1.1',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
-        blogUser: "",
-        blogAvatar: "",
-        blogStartDate: "2019-01-01",
-        menuCustomList: {},
-        menuNavList: [],
-        menuUserInfoBgImg: '',
-        webpageTitleOnblur: "(oﾟvﾟ)ノ Hi",
-        webpageTitleOnblurTimeOut: 500,
-        webpageTitleFocus: "(*´∇｀*) 欢迎回来！",
-        webpageTitleFocusTimeOut: 1000,
-        webpageIcon: "",
-        fontIconExtend: "",
-        progressBar: {
-            id: 'top-progress-bar',
-            color: '#77b6ff',
+        isVersionMapping: true,
+		codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
+        blogUser: "",   //用户昵称，默认抓取博客园用户名
+        blogAvatar: "",  //用户头像图片Url。
+        blogStartDate: "2020-01-17",  //入园时间，年-月-日，入园时间查看方法：鼠标停留园龄时间上，会显示入园时间。
+        menuCustomList: {
+            // "title1": { // 标题
+            //     "data": [ // 列表数据 ['列表', '链接']
+            //         ['我的博客1', 'https://www.cnblogs.com/bndong/']
+            //     ],
+            //     "icon": "icon-brush_fill" // 配置图标，参考文档：定制化/字体图标库
+            // }
+        },//定义菜单数据，显示在默认数据下方。
+
+        menuNavList: [
+            // 列表数据 ['导航名称', '链接']
+            ['博客园', 'https://www.cnblogs.com/'],
+            ['༺ཌ༈Asio君༈ད༻','https://blog.csdn.net/weixin_43439972'],
+            ['虫部落资源','http://magnet.chongbuluo.com/'],
+            ['联系博主','https://msg.cnblogs.com/send/']
+        ],//自定义菜单导航，显示在默认导航下方
+        menuUserInfoBgImg: 'https://files.cnblogs.com/files/asio/menu_bg.gif',//菜单个人信息背景图片
+        webpageTitleOnblur: "(oﾟvﾟ)ノ Hi",//当页面失去焦点，页面title显示的文字。
+        webpageTitleOnblurTimeOut: 500,//当页面失去焦点，页面title变化的延时时间，单位毫秒。
+        webpageTitleFocus: "(*´∇｀*) 欢迎回来！",//当页面获取焦点，页面title显示的文字；显示后，延时恢复原title
+        webpageTitleFocusTimeOut: 1000,//当页面获取焦点，页面title变化的延时时间，单位毫秒
+        webpageIcon: "https://files.cnblogs.com/files/asio/blog_logo.gif",//网站图标图片Url
+        fontIconExtend: "",//字体图标库扩展Css的Url
+        progressBar: {//进度条配置，显示在页面顶部
+            id: 'top-progress-bar',// 请勿修改该值
+            color: '#99FFCC',
             height: '2px',
             duration: 0.2
         },
-        loading: {
+        loading: {//页面加载loading
             rebound: {
                 tension: 16,
                 friction: 5
@@ -134,15 +161,15 @@ if (initCheck()) {
                 renderBase: false
             }
         },
-        homeTopAnimationRendered: true,
-        homeTopAnimation: {
+        homeTopAnimationRendered: true,//是否渲染主页banner动效
+        homeTopAnimation: {//主页banner动效配置
             radius: 15,
             density: 0.2,
             color: 'rgba(255,255,255, .2)',
             clearOffset: 0.3
         },
-        essayTopAnimationRendered: true,
-        essayTopAnimation: {
+        essayTopAnimationRendered: true,//是否渲染文章页banner动效
+        essayTopAnimation: {//文章页banner动效配置
             triW: 14,
             triH: 20,
             neighbours: ["side", "top", "bottom"],
@@ -152,16 +179,18 @@ if (initCheck()) {
             trailMaxLength: 30,
             trailIntervalCreation: 100,
             delayBeforeDisappear: 2,
-            colorsRandom: false,
+            colorsRandom: false,//是否自动生成颜色
             colors: [
-                '#96EDA6', '#5BC6A9',
-                '#38668C', '#374D84',
+                '#66FF99', '#5BC6A9',
+                '#99FF99', '#66FFCC',
+                '#38668C', '#666699',
                 '#BED5CB', '#62ADC6',
-                '#8EE5DE', '#304E7B'
+                '#CC99FF', '#CC9999',
+                '#FFFF66', '#FF9999'
             ]
         },
-        bgAnimationRendered: true,
-        backgroundAnimation: {
+        bgAnimationRendered: true,//是否渲染页面背景动效
+        backgroundAnimation: {//页面背景动效配置
             colorSaturation: "60%",
             colorBrightness: "50%",
             colorAlpha: 0.5,
@@ -173,34 +202,207 @@ if (initCheck()) {
             parallaxAmount: -0.2,
             animateSections: true
         },
-        homeTopImg: [
-            "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/home_top_bg.webp"
+        homeTopImg: [//主页banner图片Url，推荐尺寸>= 1920*1080，支持多张，每次刷新随机设置一张
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217113617ACG%E2%99%A5%E6%9A%97%E9%BB%91%E7%B3%BB24.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114042ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F12.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114147ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F16.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200320ACG%E2%99%A5%E9%AC%BC%E5%88%8074.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200334ACG%E2%99%A5%E9%AC%BC%E5%88%8088.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200713ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD5.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200725ACG%E2%99%A5%E9%AC%BC%E5%88%8016.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200743ACG%E2%99%A5%E9%AC%BC%E5%88%8068.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200803ACG%E2%9D%A4%E9%BB%98%E9%83%81%E4%BA%AD50.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200815ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8327.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200826ACG%E2%9D%A4%E9%AC%BC%E5%88%8061.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200836ACG%E2%9D%A4%E9%AC%BC%E5%88%8043.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200842ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD9.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200852ACG%E2%9D%A4%E6%BC%AB%E5%AF%BB%E5%B0%91%E5%A5%B38.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200913ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B355.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200927ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%836.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200934ACG%E2%99%A5%E8%8A%99%E8%93%89%E9%98%8125.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200943ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F17.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200955ACG%E2%9D%A4%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%8610.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201006ACG-%E5%8F%8C%E5%AD%90%E6%98%9F13.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201015ACG-%E5%8F%8C%E5%AD%90%E6%98%9F17.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201030ACG-%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B32.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201101ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B346.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201108ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B342.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201118ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B354.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201139ACG-%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA40.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201147ACG-%E5%85%BD%E8%80%B3%E5%A8%9821.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201155ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F28.png",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201204ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8324.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201213ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8142.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201221ACG%E2%9D%A4%E8%90%8C%E7%99%BD%E7%B3%BB8.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201229ACG%E2%9D%A4%E8%BD%BB%E9%A3%8E%E9%98%8127.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201236ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F11.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201246ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F11.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201339ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%864.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201353ACG%E2%9D%A4%E9%BB%91%E9%A2%9C%E5%B0%91%E5%A5%B36.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201359ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8359.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201407ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F13.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201420ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F18.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201545ACG-%E7%BA%A2%E9%A2%9C%E9%98%8138.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201554ACG%E2%99%A5%E9%AC%BC%E5%88%8082.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201607ACG%E2%9D%A4%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B320.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201617ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8327.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201628ACG%E2%99%A5%E9%AC%BC%E5%88%8052.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201635ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8323.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201641ACG%E2%9D%A4%E9%AC%BC%E5%88%80148.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201649ACG-%E5%85%BD%E8%80%B3%E5%A8%983.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201656ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F7.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201705ACG-%E5%AD%90%E8%A1%BF%E9%98%8112.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201714ACG%E2%99%A5%E9%AC%BC%E5%88%8030.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201723ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD12.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201739ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F34.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201840ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8126.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201852ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B323.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201904ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B338.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201909ACG%E2%9D%A4%E5%8F%8C%E5%AD%90%E6%98%9F32.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201913ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F15.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201918ACG%E2%9D%A4%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA1.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201923ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F10.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201927ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%867.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201931ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8127.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201935ACG%E2%9D%A4%E5%AD%90%E8%A1%BF%E9%98%817.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201949ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8318.jpg"
         ],
-        homeBannerText: "",
-        homeBannerTextType: "jinrishici",
-        essayTopImg: [
-            "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/nothome_top_bg.webp"
+        homeBannerText: "",//主页banner上的标语，设置此选项会固定显示文字，默认为空，自动获取一句
+        homeBannerTextType: "jinrishici",//主页 banner 上的标语获取源，默认为 jinrishici 每次刷新随机获取一句古诗词
+        essayTopImg: [//文章页banner图片Url，推荐尺寸>= 1920*1080，支持多张，每次刷新随机设置一张
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217113617ACG%E2%99%A5%E6%9A%97%E9%BB%91%E7%B3%BB24.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114042ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F12.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114147ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F16.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200320ACG%E2%99%A5%E9%AC%BC%E5%88%8074.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200334ACG%E2%99%A5%E9%AC%BC%E5%88%8088.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200713ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD5.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200725ACG%E2%99%A5%E9%AC%BC%E5%88%8016.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200743ACG%E2%99%A5%E9%AC%BC%E5%88%8068.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200803ACG%E2%9D%A4%E9%BB%98%E9%83%81%E4%BA%AD50.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200815ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8327.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200826ACG%E2%9D%A4%E9%AC%BC%E5%88%8061.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200836ACG%E2%9D%A4%E9%AC%BC%E5%88%8043.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200842ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD9.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200852ACG%E2%9D%A4%E6%BC%AB%E5%AF%BB%E5%B0%91%E5%A5%B38.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200913ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B355.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200927ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%836.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200934ACG%E2%99%A5%E8%8A%99%E8%93%89%E9%98%8125.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200943ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F17.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200955ACG%E2%9D%A4%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%8610.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201006ACG-%E5%8F%8C%E5%AD%90%E6%98%9F13.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201015ACG-%E5%8F%8C%E5%AD%90%E6%98%9F17.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201030ACG-%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B32.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201101ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B346.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201108ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B342.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201118ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B354.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201139ACG-%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA40.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201147ACG-%E5%85%BD%E8%80%B3%E5%A8%9821.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201155ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F28.png",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201204ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8324.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201213ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8142.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201221ACG%E2%9D%A4%E8%90%8C%E7%99%BD%E7%B3%BB8.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201229ACG%E2%9D%A4%E8%BD%BB%E9%A3%8E%E9%98%8127.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201236ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F11.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201246ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F11.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201339ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%864.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201353ACG%E2%9D%A4%E9%BB%91%E9%A2%9C%E5%B0%91%E5%A5%B36.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201359ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8359.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201407ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F13.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201420ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F18.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201545ACG-%E7%BA%A2%E9%A2%9C%E9%98%8138.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201554ACG%E2%99%A5%E9%AC%BC%E5%88%8082.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201607ACG%E2%9D%A4%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B320.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201617ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8327.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201628ACG%E2%99%A5%E9%AC%BC%E5%88%8052.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201635ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8323.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201641ACG%E2%9D%A4%E9%AC%BC%E5%88%80148.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201649ACG-%E5%85%BD%E8%80%B3%E5%A8%983.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201656ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F7.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201705ACG-%E5%AD%90%E8%A1%BF%E9%98%8112.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201714ACG%E2%99%A5%E9%AC%BC%E5%88%8030.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201723ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD12.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201739ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F34.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201840ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8126.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201852ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B323.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201904ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B338.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201909ACG%E2%9D%A4%E5%8F%8C%E5%AD%90%E6%98%9F32.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201913ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F15.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201918ACG%E2%9D%A4%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA1.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201923ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F10.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201927ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%867.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201931ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8127.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201935ACG%E2%9D%A4%E5%AD%90%E8%A1%BF%E9%98%817.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg",
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201949ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8318.jpg"
         ],
-        essayCodeHighlightingType: 'cnblogs',
-        essayCodeHighlighting: '',
-        codeMaxHeight: false,
-        essaySuffix: {
-            codeImgUrl: '',
-            aboutHtml: '',
-            copyrightHtml: '',
-            supportHtml: ''
+        essayCodeHighlightingType: 'highlightjs',//使用博客园代码高亮样式cnblogs或highlightjs，介意加载速度的可以使用此配置
+        essayCodeHighlighting: 'atom-one-dark-reasonable',//当使用博客园代码高亮样式时，此配置不会对渲染产生影响，highlightjs 代码高亮主题：demo
+        //   monokai-sublime  *  atelier-seaside-dark    *    atom-one-dark-reasonable
+        essaySuffix: {//文章后缀配置，不配置使用默认
+            codeImgUrl: '',// >= v1.1.5 左侧图片设置，不配置使用 window.cnblogsConfig.blogAvatar
+            aboutHtml: '',// 关于博主，不配置使用默认
+            copyrightHtml: '',// 版权声明，不配置使用默认
+            supportHtml: ''// 声援博主，不配置使用默认
         },
-        bottomBlogroll: [],
-        bottomText: {
+        bottomBlogroll: [
+            // 友情链接，[[链接名,链接]....]
+            ["申请坑位", 'https://msg.cnblogs.com/send/asio'],
+            ["申请坑位", 'https://msg.cnblogs.com/send/asio'],
+            ["申请坑位", 'https://msg.cnblogs.com/send/asio']
+        ],//友情链接
+        bottomText: {//页脚标语
             icon: "❤️",
-            left: "",
-            right: ""
+            left: "☞ bug全无",
+            right: "测试全过 ☜"
         },
-        footerStyle: 2,
-        consoleList: [],
-        bookList: [],
-        themeAuthor: false,
-        isVersionMapping: false,
+        footerStyle: 1,//页脚样式，有1和2
+        consoleList: [
+            ['君纤 CNBlogs', 'https://www.cnblogs.com/asio']
+        ],//控制台输出
+        bookList: [ ],
+        themeAuthor: false,   //是否显示主题作者
+        isVersionMapping: false     //是否版本映射
+        /*
+        *关于转载文章在Html源码中加入如下代码来指定文章作者和来源：
+            <input id="articleAuthor" type="hidden" value="作者" />
+            <input id="articleSource" type="hidden" value="来源URL" />
+        首先需要在页面源码中加入以下代码，来标识该页面为书单页面：
+            <input id="bookListFlg" type="hidden">
+         // 书单配置
+        window.cnblogsConfig.bookList = [
+            {
+                title: '标题1',
+                books: [
+                    {
+                        cover: 'https://images.weserv.nl/?url=https://img3.doubanio.com/view/subject/l/public/s29934992.jpg',
+                        name: '后物欲时代的来临',
+                        formerNname: '',
+                        author: '郑也夫',
+                        translator: '',
+                        press: '中信出版社',
+                        year: '2016-8'
+                        ------------------------------
+                        key               Description
+                        title	           书目标题
+                        books	           书目数据
+                        books.cover	       封面
+                        books.name	       书名
+                        books.formerNname 原书名
+                        books.author	   作者
+                        books.translator  译者
+                        books.press	       出版社
+                        books.year	       出版年
+                    }
+                ]
+            },
+            .....
+        ];
+        * */
     };
 
     window.cnblogsConfig = $.extend( true, window.cnblogsConfigDefault, window.cnblogsConfig );
@@ -209,11 +411,15 @@ if (initCheck()) {
 } else {
 
     $('a[name="top"]').text("SimpleMemory：基础配置有误，请阅读文档，检查配置！").css({
-        'display': 'block', 'text-align': 'center', 'padding-top': '45vh', 'font-size': '20px', 'color': '#333'
+        'display': 'block',
+        'text-align': 'center',
+        'padding-top': '45vh',
+        'font-size': '20px',
+        'color': '#333'
     });
 }
 
-// init check
+// init check博客园样式是否为SimpleMemory
 function initCheck() {
 
     // check base theme
@@ -317,9 +523,8 @@ function init() {
     tmp = url.split("/");
     var user = tmp[3];
     var navListHtml = '<li><a href="https://www.cnblogs.com/'+user+'/" target="_self">首页</a></li>' +
-        '<li><a href="https://msg.cnblogs.com/send/'+user+'" target="_blank">联系</a></li>' +
-        '<li><a href="https://www.cnblogs.com/'+user+'/rss" target="_blank">订阅</a></li>' +
-        '<li><a href="https://i.cnblogs.com/" target="_blank">管理</a></li>';
+        '<li><a href="https://i.cnblogs.com/" target="_blank">管理</a></li>'
+
 
     var menuNavList = window.cnblogsConfig.menuNavList;
     if (menuNavList.length > 0) {
