@@ -662,8 +662,8 @@ function Base() {
         timeIds.setCnzzTId = window.setInterval( setCnzz, 1000 );
 
         // 设置主题信息
-        footerBox.append('<div id="themeInfo"></div>');
-        setTheme();
+        // footerBox.append('<div id="themeInfo"></div>');
+        // setTheme();
 
         // 设置页脚样式
         switch (parseInt(window.cnblogsConfig.footerStyle)) {
