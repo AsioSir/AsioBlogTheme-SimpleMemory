@@ -37,7 +37,7 @@ function myTools() {
             + window.cnblogsConfig.GhRepositories + '/tree/'
             + window.cnblogsConfig.GhVersions,
 
-            e = ["\n %c %c %c Theme GitHub - " + (window.cnblogsConfig.GhVersions).substring(0,7)+" %c  %c "+rHref+"  %c \n\n", "background: #fadfa3; padding:5px 0;", "background: #fadfa3; padding:5px 0;", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;", "background: #FCEDC9; padding:5px 0;", "background: #fadfa3; padding:5px 0;"];
+            e = ["\n %c %c %c Theme GitHub - " + (window.cnblogsConfig.GhVersions).substring(0,7)+" %c  %c " + "  %c \n", "background: #fadfa3; padding:5px 0;", "background: #fadfa3; padding:5px 0;", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;", "background: #FCEDC9; padding:5px 0;", "background: #fadfa3; padding:5px 0;"];
         window.console.log.apply(console, e);
         switch (mode) {
             case 'random':
@@ -52,7 +52,7 @@ function myTools() {
                 $.each(list, function (i) {
                     var fl = list[i];
                     console.info("%c ", "background: url(https://files.cnblogs.com/files/poloyy/console.gif) no-repeat center;padding-left:400px;padding-bottom: 160px;background-size:400px");
-                    console.log('\n' + ' %c ༺ཌ༈君☠纤༈ད༻  CNBlogs %c https://www.cnblogs.com/poloyy ' + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
+                    console.log('\n' + ' %c ༺ཌ༈君☠纤༈ད༻  CNBlogs %c https://www.cnblogs.com/asio ' + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
                 });
                 break;
 
