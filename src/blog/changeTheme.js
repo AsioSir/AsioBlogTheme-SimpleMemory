@@ -19,12 +19,12 @@ $(document).ready(function (){
                 //AsioTheme值存为1,保存30天cookie
                 setCookie("AsioTheme","1",7*24, "/asio");
                 DLTheme(Theme.Dark)
-                loadjscssfile("https://blog-static.cnblogs.com/files/asio/NightTheme.css","css");
+                loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
             }else{
                 console.log("当前主题:Light")
                 setCookie("AsioTheme","0",7*24,"/asio");
                 DLTheme(Theme.Light)
-                removejscssfile("https://blog-static.cnblogs.com/files/asio/NightTheme.css","css");
+                removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
             }
         })
     }else {
@@ -39,19 +39,19 @@ function  LoadingTheme(version,checkBtn){
         setCookie("AsioTheme","0",7*24,"/asio");
         checkBtn.checked = false;
         DLTheme(Theme.Light)
-        removejscssfile("https://blog-static.cnblogs.com/files/asio/NightTheme.css","css");
+        removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
     }else if (version == 1) {
         console.log("当前主题:Dark");
         setCookie("AsioTheme","1",7*24,"/asio");
         checkBtn.checked = true;
         DLTheme(Theme.Dark)
-        loadjscssfile("https://blog-static.cnblogs.com/files/asio/NightTheme.css","css");
+        loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
     }else{
         console.log("当前主题:--Light");
         setCookie("AsioTheme","0",7*24,"/asio");
         checkBtn.checked = false;
         DLTheme(Theme.Light)
-        removejscssfile("https://blog-static.cnblogs.com/files/asio/NightTheme.css","css");
+        removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
     }
 }
 
