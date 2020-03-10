@@ -365,7 +365,7 @@ if (initCheck()) {
             ['君纤 CNBlogs', 'https://www.cnblogs.com/asio']
         ],//控制台输出
         bookList: [ ],
-        themeAuthor: false,   /是否显示主题作者
+        themeAuthor: false,   //是否显示主题作者
         isVersionMapping: false     //是否版本映射
         /*
         *关于转载文章在Html源码中加入如下代码来指定文章作者和来源：
