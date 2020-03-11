@@ -95,7 +95,7 @@ function Base() {
         $('#menuWrap').optiscroll({ forceScrollbars: true, maxTrackSize: 20, preventParentScroll: true });
 
         // 设置菜单个人简介头像
-        var blogAvatar = window.cnblogsConfig.blogAvatar ? window.cnblogsConfig.blogAvatar : 'https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/default_avatar.webp';
+        var blogAvatar = window.cnblogsConfig.blogAvatar ? window.cnblogsConfig.blogAvatar : 'https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@@master/img/webp/default_avatar.webp';
         $('#menuBlogAvatar').append("<img src='"+blogAvatar+"'>");
 
         // html5-title
@@ -684,7 +684,7 @@ function Base() {
             });
 
             $('.footer-image').css({
-                'background': 'url(https://gitee.com/dbnuo/Cnblogs-Theme-SimpleMemory/raw/master/img/webp/footer.webp) no-repeat 50%',
+                'background': 'url(https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/webp/footer.webp) no-repeat 50%',
                 'height': '368px',
                 'z-index': '1',
                 'position': 'absolute',
@@ -1260,7 +1260,7 @@ function Base() {
 
         // 使用 highlightjs 代码样式
         function highlightjsCode() {
-            tools.dynamicLoadingCss('https://cdn.jsdelivr.net/gh/BNDong/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/src/style/highlightjs/'+hltheme+'.min.css');
+            tools.dynamicLoadingCss('https://cdn.jsdelivr.net/gh/AsioSir/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/src/style/highlightjs/'+hltheme+'.min.css');
             require(['highlightjs'], function() {
                 $('.post pre').each(function(i, block) {
                     if ($.inArray(hltheme, [
@@ -1387,7 +1387,7 @@ function Base() {
                         var patch = op.text();
                         html += '<img class="comment-avatar" src="'+patch+'"/>';
                     } else {
-                        html += '<img class="comment-avatar" src="https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/default_avatar.webp"/>';
+                        html += '<img class="comment-avatar" src="https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/webp/default_avatar.webp"/>';
                     }
                     $(commentList[i]).before(html);
                 }
