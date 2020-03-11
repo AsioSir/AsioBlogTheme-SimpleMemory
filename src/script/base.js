@@ -710,8 +710,9 @@ function Base() {
 
         // v3 页脚游鱼
         function init_t3() {
+            addFooterHtml();
             var pvHtml =  '<div id="jsi-flying-fish-container" class="container"></div>';
-            $('#footer').append(pvHtml).prepend('<div class="footer-image"></div>');
+            $('#page_end_html').append(pvHtml).prepend('<div class="footer-image"></div>');
         }
 
         // 添加页脚
@@ -775,7 +776,7 @@ function Base() {
             );
         }
     };
-    
+
 
 //=================== 逻辑处理：主页处理
 

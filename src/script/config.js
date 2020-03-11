@@ -7,6 +7,7 @@ require.config({
         }
     },
     paths: {
+        JQuery: setFileNameMin('jquery-3.2.1.min.js','js'),
         //-- 菜单滚动条
         optiscroll: setFileNameMin('jquery.optiscroll', 'js'),
         //-- 进度条
@@ -63,7 +64,6 @@ require.config({
         miao:setFileNameMin('miao','js'),
         //--footer游鱼样式
         fish: setFileNameMin('fish','js'),
-        JQuery: setFileNameMin('jquery-3.2.1.min.js','js'),
         //sina表情
         sinaFaceAndEffecJs:setFileNameMin('sinaFaceAndEffec','css'),
         meme:setFileNameMin('meme','js')
