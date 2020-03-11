@@ -1,16 +1,16 @@
 /*!
- * DATE: 20203-11
- * UPDATES AND DOCS AT: https://github.com/AsioSir
- * https://www.cnblogs.com/asio
- * @author: Asio君
+ * DATE: 2018-03-13
+ * UPDATES AND DOCS AT: https://github.com/BNDong
+ * https://www.cnblogs.com/bndong/
+ * @author: BNDong, dbnuo@foxmail.com
  **/
 function Base() {
 
     const bndongJs     = this,
-          tools        = new myTools,
-          postMetaRex  = /.*posted\s*@\s*([0-9\-:\s]{16}).*阅读\s*\(([0-9]*)\).*评论\s*\(([0-9]*)\).*/,
-          postMetaRex2 = /.*posted\s*@\s*([0-9\-:\s]{16}).*/,
-          progressBar  = new ToProgress(window.cnblogsConfig.progressBar, '#bottomProgressBar'); // 进度条
+        tools        = new myTools,
+        postMetaRex  = /.*posted\s*@\s*([0-9\-:\s]{16}).*阅读\s*\(([0-9]*)\).*评论\s*\(([0-9]*)\).*/,
+        postMetaRex2 = /.*posted\s*@\s*([0-9\-:\s]{16}).*/,
+        progressBar  = new ToProgress(window.cnblogsConfig.progressBar, '#bottomProgressBar'); // 进度条
     var   temScroll    = 0,  // 上一次页面滚动位置
 
         /** 定时器 **/
@@ -44,6 +44,7 @@ function Base() {
      * 初始化
      */
     this.init = function () {
+        require(['JQuery']);
         bndongJs.loadingBeforeInit(); // Loading 前初始化
         bndongJs.endLoading();        // Loading 结束
         bndongJs.loadingAfterInit();  // Loading 后初始化
@@ -55,6 +56,7 @@ function Base() {
      * Loading 前初始化
      */
     this.loadingBeforeInit = function () {
+
         // 延时清除全部定时器
         setTimeout(bndongJs.clearIntervalAll, 30000);
 
@@ -69,16 +71,11 @@ function Base() {
      * Loading后初始化
      */
     this.loadingAfterInit = function () {
-
         // 添加页脚
         bndongJs.addFooter();
+
         // 背景动画
-        if (window.cnblogsConfig.bgAnimationRendered){
-            require(['RibbonsEffect']);
-            require(['changeTheme']);
-            require(['mouseClick']);
-            require(['miao']);
-        }
+        if (window.cnblogsConfig.bgAnimationRendered) require(['RibbonsEffect']);
 
         // 更换网站图标
         let linkObject  = document.createElement('link');
@@ -99,7 +96,7 @@ function Base() {
         $('#menuWrap').optiscroll({ forceScrollbars: true, maxTrackSize: 20, preventParentScroll: true });
 
         // 设置菜单个人简介头像
-        var blogAvatar = window.cnblogsConfig.blogAvatar ? window.cnblogsConfig.blogAvatar : 'https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/webp/default_avatar.webp';
+        var blogAvatar = window.cnblogsConfig.blogAvatar ? window.cnblogsConfig.blogAvatar : 'https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/default_avatar.webp';
         $('#menuBlogAvatar').append("<img src='"+blogAvatar+"'>");
 
         // html5-title
@@ -133,6 +130,9 @@ function Base() {
 
         // 控制台输出
         tools.consoleText(window.cnblogsConfig.consoleList, 'banner');
+        require(['mouseClick']);
+        require(['miao']);
+        require(['changeTheme']);
     };
 
 //---------------------------------- 逻辑处理 --------------------------------------//
@@ -500,7 +500,7 @@ function Base() {
                 bndongJs.clearIntervalTimeId(timeIds.setMenuRecordTId);
             }
         }
-        
+
         // 添加文章档案
         function setArticle() {
             if (sbArticle.length > 0 && menuArticle.html() === '') {
@@ -633,7 +633,6 @@ function Base() {
             });
         }
     };
-
 
     /**
      * 添加页脚
@@ -980,6 +979,7 @@ function Base() {
      * 非主页初始化
      */
     this.notHomeInit = function() {
+
         // 设置随笔标题
         const sbTitle = $('#cb_post_title_url').text();
         $('#sbTitle').text(sbTitle);
@@ -1123,8 +1123,8 @@ function Base() {
         if (cpb.length > 0 && imgList.length > 0) {
             $.each(imgList, function (i) {
                 var tem = $(imgList[i]);
-                    if (!tem.hasClass('code_img_closed') && !tem.hasClass('code_img_opened'))
-                        tem.wrap('<a data-fancybox="gallery" href="'+tem.attr('src')+'"></a>');
+                if (!tem.hasClass('code_img_closed') && !tem.hasClass('code_img_opened'))
+                    tem.wrap('<a data-fancybox="gallery" href="'+tem.attr('src')+'"></a>');
             });
         }
 
@@ -1261,15 +1261,15 @@ function Base() {
 
         // 使用 highlightjs 代码样式
         function highlightjsCode() {
-            tools.dynamicLoadingCss('https://cdn.jsdelivr.net/gh/AsioSir/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/src/style/highlightjs/'+hltheme+'.min.css');
+            tools.dynamicLoadingCss('https://cdn.jsdelivr.net/gh/BNDong/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/src/style/highlightjs/'+hltheme+'.min.css');
             require(['highlightjs'], function() {
                 $('.post pre').each(function(i, block) {
                     if ($.inArray(hltheme, [
-                            'github-gist', 'googlecode', 'grayscale',
-                            'idea', 'isbl-editor-light', 'qtcreator_light',
-                            'tomorrow', 'vs', 'xcode', 'arduino-light',
-                            'ascetic', 'color-brewer', 'lightfair'
-                        ]) !== -1) pre.css('background-color', '#f6f8fa');
+                        'github-gist', 'googlecode', 'grayscale',
+                        'idea', 'isbl-editor-light', 'qtcreator_light',
+                        'tomorrow', 'vs', 'xcode', 'arduino-light',
+                        'ascetic', 'color-brewer', 'lightfair'
+                    ]) !== -1) pre.css('background-color', '#f6f8fa');
                     hljs.highlightBlock(block);
                 });
             });
@@ -1368,11 +1368,11 @@ function Base() {
 
         //气泡效果
         timeIds.commentTId = window.setInterval(function(){
-                if (commentPlaceholder.html() != '' || $("#comments_pager_bottom").length > 0) {
-                    CommentBubble();
-                    bndongJs.clearIntervalTimeId(timeIds.commentTId);
-                }
-            },1000);
+            if (commentPlaceholder.html() != '' || $("#comments_pager_bottom").length > 0) {
+                CommentBubble();
+                bndongJs.clearIntervalTimeId(timeIds.commentTId);
+            }
+        },1000);
 
         function commentAvatar(commentList) {
             commentList.each(function (i) {
@@ -1388,7 +1388,7 @@ function Base() {
                         var patch = op.text();
                         html += '<img class="comment-avatar" src="'+patch+'"/>';
                     } else {
-                        html += '<img class="comment-avatar" src="https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/webp/default_avatar.webp"/>';
+                        html += '<img class="comment-avatar" src="https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/default_avatar.webp"/>';
                     }
                     $(commentList[i]).before(html);
                 }
