@@ -73,9 +73,14 @@ function Base() {
 
         // 添加页脚
         bndongJs.addFooter();
-
+        require(['JQuery']);
         // 背景动画
-        if (window.cnblogsConfig.bgAnimationRendered) require(['RibbonsEffect']);
+        if (window.cnblogsConfig.bgAnimationRendered){
+            require(['RibbonsEffect']);
+            require(['changeTheme']);
+            require(['mouseClick']);
+            require(['miao']);
+        }
 
         // 更换网站图标
         let linkObject  = document.createElement('link');
@@ -713,6 +718,7 @@ function Base() {
             addFooterHtml();
             var pvHtml =  '<div id="jsi-flying-fish-container" class="container"></div>';
             $('#page_end_html').append(pvHtml).prepend('<div class="footer-image"></div>');
+            require(['fish']);
         }
 
         // 添加页脚
@@ -976,7 +982,8 @@ function Base() {
      * 非主页初始化
      */
     this.notHomeInit = function() {
-
+        require(['sinaFaceAndEffecJs']);
+        require(['meme']);
         // 设置随笔标题
         const sbTitle = $('#cb_post_title_url').text();
         $('#sbTitle').text(sbTitle);

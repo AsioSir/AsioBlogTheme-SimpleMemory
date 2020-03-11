@@ -65,8 +65,10 @@ require.config({
         //--footer游鱼样式
         fish: setFileNameMin('fish','js'),
         //sina表情
-        sinaFaceAndEffecJs:setFileNameMin('sinaFaceAndEffec','css'),
-        meme:setFileNameMin('meme','js')
+        sinaFaceAndEffec:setFileNameMin('sinaFaceAndEffec','js'),
+        meme:setFileNameMin('meme','js'),
+        //主题切换
+        changeTheme:setFileNameMin('changeTheme','js')
     },
     shim:{
         optiscroll: {
@@ -99,7 +101,7 @@ require.config({
         blogCommont:{
             deps: ['css!'+getJsDelivrUrl('blog-commont.css')]
         },
-        sinaFaceAndEfferCss:{
+        sinaFaceAndEffec:{
             deps: ['css!'+getJsDelivrUrl('sinaFaceAndEffec.css')]
         },
         marvin: {
