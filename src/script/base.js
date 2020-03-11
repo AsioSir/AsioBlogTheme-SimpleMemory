@@ -55,8 +55,6 @@ function Base() {
      * Loading 前初始化
      */
     this.loadingBeforeInit = function () {
-       require(['JQuery']);
-
         // 延时清除全部定时器
         setTimeout(bndongJs.clearIntervalAll, 30000);
 
