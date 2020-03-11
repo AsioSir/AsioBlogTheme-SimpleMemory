@@ -465,7 +465,7 @@ b {
     color: #888;
     position: relative;
     top: 10px;
-    display: inline-block;
+    display: none;
 }
 
 .postMeta > i {
@@ -489,11 +489,11 @@ b {
 }
 
 .postDesc a:link,.postDesc a:visited,.postDesc a:active {
-    color: rgba(255, 176, 60, 0.7) !important;
+    color: rgba(255, 176, 60, 0.7);
 }
 
 .postDesc a:hover {
-    color: #66CCFF!important;
+    color: #66CCFF;
     text-decoration: none
 }
 
@@ -512,15 +512,6 @@ p.article-info-text > .postMeta {
 
 p.article-info-text > .postMeta i {
     font-size: 16px;
-}
-
-.postDesc a:active, .postDesc a:link, .postDesc a:visited {
-    color: #666
-}
-
-.postDesc a:hover {
-    color: #5c8ec6;
-    text-decoration: none
 }
 
 .postSticky {
@@ -1116,15 +1107,15 @@ p.article-info-text > .postMeta i {
     font-size: 1.4rem;
     line-height: 2.2rem;
     color: #9EABB3;
-    display: none;
 }
 
 .entrylistItemPostDesc a:active, .entrylistItemPostDesc a:link, .entrylistItemPostDesc a:visited {
-    color: #666
+    color: rgba(255, 176, 60, 0.7)
 }
 
 .entrylistItemPostDesc a:hover {
-    color: #5c8ec6
+    color: #66CCFF!important;
+    text-decoration: none;
 }
 
 .entrylist .postSeparator {
@@ -4952,14 +4943,4 @@ table#blogCalendar>tbody>tr>td>a {
 /*游鱼*/
 .container{
     background: rgba(0, 0, 0, 0.2) !important;
-}
-#jsi-flying-fish-container {
-    width: 100%;
-    height: 200px;
-    position: fixed;
-    z-index: 999;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.2) !important;
-    pointer-events: none;
 }
