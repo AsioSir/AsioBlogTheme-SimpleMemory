@@ -55,6 +55,7 @@ function Base() {
      * Loading 前初始化
      */
     this.loadingBeforeInit = function () {
+       require(['JQuery']);
 
         // 延时清除全部定时器
         setTimeout(bndongJs.clearIntervalAll, 30000);
@@ -73,7 +74,6 @@ function Base() {
 
         // 添加页脚
         bndongJs.addFooter();
-        require(['JQuery']);
         // 背景动画
         if (window.cnblogsConfig.bgAnimationRendered){
             require(['RibbonsEffect']);
@@ -982,8 +982,6 @@ function Base() {
      * 非主页初始化
      */
     this.notHomeInit = function() {
-        require(['sinaFaceAndEffec']);
-        require(['meme']);
         // 设置随笔标题
         const sbTitle = $('#cb_post_title_url').text();
         $('#sbTitle').text(sbTitle);

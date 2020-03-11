@@ -64,9 +64,6 @@ require.config({
         miao:setFileNameMin('miao','js'),
         //--footer游鱼样式
         fish: setFileNameMin('fish','js'),
-        //sina表情
-        sinaFaceAndEffec:setFileNameMin('sinaFaceAndEffec','js'),
-        meme:setFileNameMin('meme','js'),
         //主题切换
         changeTheme:setFileNameMin('changeTheme','js')
     },
@@ -97,12 +94,6 @@ require.config({
         },
         codeDoxy: {
             deps: ['css!'+getJsDelivrUrl('codeDoxy.css')]
-        },
-        blogCommont:{
-            deps: ['css!'+getJsDelivrUrl('blog-commont.css')]
-        },
-        sinaFaceAndEffec:{
-            deps: ['css!'+getJsDelivrUrl('sinaFaceAndEffec.css')]
         },
         marvin: {
             deps: ['title', 'bootstrap', 'css!'+getJsDelivrUrl('marvin.nav2.css')]

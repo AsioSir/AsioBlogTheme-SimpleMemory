@@ -4957,6 +4957,6 @@ table#blogCalendar>tbody>tr>td>a {
     z-index: 999;
     bottom: 0;
     left: 0;
-    background: none;
+    background: rgba(0, 0, 0, 0.2) !important;
     pointer-events: none;
 }
