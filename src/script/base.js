@@ -982,7 +982,7 @@ function Base() {
      * 非主页初始化
      */
     this.notHomeInit = function() {
-        require(['sinaFaceAndEffecJs']);
+        require(['sinaFaceAndEffec']);
         require(['meme']);
         // 设置随笔标题
         const sbTitle = $('#cb_post_title_url').text();

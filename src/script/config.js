@@ -7,7 +7,7 @@ require.config({
         }
     },
     paths: {
-        JQuery: setFileNameMin('jquery-3.2.1.min.js','js'),
+        JQuery: setFileNameMin('jquery-3.2.1.min','js'),
         //-- 菜单滚动条
         optiscroll: setFileNameMin('jquery.optiscroll', 'js'),
         //-- 进度条
