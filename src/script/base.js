@@ -631,39 +631,24 @@ function Base() {
         }
     };
 
+
     /**
      * 添加页脚
      */
     this.addFooter = function() {
         const footer = $('#footer'),
-              lHref  = 'https://github.com/'+window.cnblogsConfig.GhUserName+'/'+window.cnblogsConfig.GhRepositories+'/tree/'+window.cnblogsConfig.CnVersions,
-              rHref  = 'https://github.com/'+window.cnblogsConfig.GhUserName+'/'+window.cnblogsConfig.GhRepositories+'/tree/'+window.cnblogsConfig.GhVersions;
-        var footerText = footer.text();
-        footer.html('<div class="footer-box"></div>');
-        var footerBox = $('.footer-box');
+            lHref  = 'https://github.com/'+window.cnblogsConfig.GhUserName+'/'+window.cnblogsConfig.GhRepositories+'/tree/'+window.cnblogsConfig.CnVersions,
+            rHref  = 'https://github.com/'+window.cnblogsConfig.GhUserName+'/'+window.cnblogsConfig.GhRepositories+'/tree/'+window.cnblogsConfig.GhVersions;
 
-        // 设置标语
+        var pvHtml   = '', bgFooter = '';
+
         if (window.cnblogsConfig.bottomText.left || window.cnblogsConfig.bottomText.right)
-            footerBox.append('<div class="footer-text">[ '+window.cnblogsConfig.bottomText.left+'<span class="footer-text-icon">'+window.cnblogsConfig.bottomText.icon+'</span>'+window.cnblogsConfig.bottomText.right+' ]</div>');
+            pvHtml += '<div>【'+window.cnblogsConfig.bottomText.left+'<span id="footerTextIcon">'+window.cnblogsConfig.bottomText.icon+'</span>'+window.cnblogsConfig.bottomText.right+'】</div>';
 
-        // 设置运行时间
-        footerBox.append('<div><span id="blogRunTimeSpan"></span><span class="my-face">ღゝ◡╹)ノ♡</span></div>');
-        window.setInterval( setRunTime, 500 );
-
-        // 设置友情链接
-        footerBox.append('<div id="blogrollInfo"></div>');
-        setBlogroll();
-
-        // 设置版本信息
-        footerBox.append('<div>'+footerText+'</div>');
-
-        // 设置网站统计
-        footerBox.append('<div id="cnzzInfo"></div>');
-        timeIds.setCnzzTId = window.setInterval( setCnzz, 1000 );
-
-        // 设置主题信息
-        // footerBox.append('<div id="themeInfo"></div>');
-        // setTheme();
+        pvHtml += "<div><span id='blogRunTimeSpan'></span><span class='my-face'>ღゝ◡╹)ノ♡</span></div>" +
+            '<div id="blogrollInfo"></div>' +
+            '<div id="cnzzInfo"></div>' +
+            '<div id="themeInfo"></div>';
 
         // 设置页脚样式
         switch (parseInt(window.cnblogsConfig.footerStyle)) {
@@ -673,8 +658,15 @@ function Base() {
             default: init_t1();break;
         }
 
-        // v1 页脚裙底
+        setBlogroll();
+        setTheme();
+        window.setInterval( setRunTime, 500 );
+        timeIds.setCnzzTId = window.setInterval( setCnzz, 1000 );
+
+        // v1.0 页脚
         function init_t1() {
+            pvHtml = '<div class="footer-image"></div>' + pvHtml;
+            addFooterHtml();
             $('#footer').css({
                 'min-height': '130px',
                 '_height': '15px',
@@ -699,24 +691,21 @@ function Base() {
                 'width': '100%',
                 'pointer-events': 'none'
             });
-            $('#footer').prepend('<div class="footer-image"></div>').addClass('footer-t1');
         }
 
-        // v2 页脚群山
+        // v1.1+ 页脚
         function init_t2() {
-            var html = '<footer>' +
+
+            bgFooter = '<footer>' +
                 '<footer-background>' +
                 '<figure class="clouds"></figure>' +
                 '<figure class="background"></figure>' +
                 '<figure class="foreground"></figure>' +
+                '<figure class="poof"></figure>' +
                 '</footer-background>' +
                 '</footer>';
-            $('#footer').prepend(html);
-            $('#footer .footer-text').css({
-                'padding-bottom': '0',
-                'border-bottom': 'none',
-                'margin-bottom':  '0'
-            });
+
+            addFooterHtml();
         }
 
         // v3 页脚游鱼
@@ -725,9 +714,20 @@ function Base() {
             $('#footer').append(pvHtml).prepend('<div class="footer-image"></div>');
         }
 
+        // 添加页脚
+        function addFooterHtml() {
+            const poweredby = $('#poweredby');
+            bgFooter && footer.prepend(bgFooter);
+            if (poweredby.length > 0) {
+                poweredby.before(pvHtml);
+            } else {
+                footer.append(pvHtml);
+            }
+        }
+
         // 设置运行时间
         function setRunTime() {
-            var runDate = tools.getRunDate(window.cnblogsConfig.blogStartDate ? window.cnblogsConfig.blogStartDate : '2020-01-17');
+            var runDate = tools.getRunDate(window.cnblogsConfig.blogStartDate ? window.cnblogsConfig.blogStartDate : '2019-01-01');
             $('#blogRunTimeSpan').text('This blog has running : '+runDate.daysold+' d '+runDate.hrsold+' h '+runDate.minsold+' m '+runDate.seconds+' s');
         }
 
@@ -765,6 +765,7 @@ function Base() {
 
         // 设置加载主题信息
         function setTheme() {
+
             $('#themeInfo').html('Theme version: <a href="'+lHref
                 +'" target="_blank" style="color: #888;text-decoration: underline;">'
                 +(window.cnblogsConfig.CnVersions).substring(0,7)+'</a>'
@@ -774,6 +775,7 @@ function Base() {
             );
         }
     };
+    
 
 //=================== 逻辑处理：主页处理
 
