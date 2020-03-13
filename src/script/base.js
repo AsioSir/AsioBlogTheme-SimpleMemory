@@ -749,7 +749,7 @@ function Base() {
 
         // 设置网站统计，请去 CNZZ 配置自己的，谢谢！！
         function setCnzz() {
-            var cnzzStat = $('.id_cnzz_stat_icon a');
+            var cnzzStat = $('#cnzz_stat_icon_1278681006 a');
             if (cnzzStat.length > 0) {
                 var cnzzInfo = [];
                 var cnzzArr  = $(cnzzStat[1]).text().split('|');
