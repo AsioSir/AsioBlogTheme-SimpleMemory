@@ -10,20 +10,20 @@ $(document).ready(function (){
     // 按钮元素
     var checkBtn = document.getElementById('ckbx-style-13-1');   //input
     if(checkBtn != null&&checkBtn!=undefined){
-        //目前只有黑白两种,0白,1黑
+        //目前只有黑白两种,1白,2黑，0或其他是未设置，默认切换
         LoadingTheme(version,checkBtn);
 
         //监听Theme按钮 changeTheme,0是日间背景，1是夜间背景
         checkBtn.addEventListener('click', function(){
             if(checkBtn.checked){
                 console.log("当前主题:Dark");
-                //AsioTheme值存为1,保存一天cookie，0-1点自动清零
-                setCookie("AsioTheme","1",24 - date.getHours(), "/asio");
+                //AsioTheme值存为2,保存一天cookie，0-1点自动清零
+                setCookie("AsioTheme","2",24 - date.getHours(), "/asio");
                 DLTheme(Theme.Dark)
                 loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
             }else{
                 console.log("当前主题:Light");
-                setCookie("AsioTheme","0",24 - date.getHours(),"/asio");
+                setCookie("AsioTheme","1",24 - date.getHours(),"/asio");
                 DLTheme(Theme.Light)
                 removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
             }
@@ -35,12 +35,12 @@ $(document).ready(function (){
 
 function  LoadingTheme(version,checkBtn){
     var thistime = "当前时间 " + new Date().toLocaleTimeString('chinese',{hour12:false});
-    if(version == 0){
+    if(version == 1){
         console.log("当前主题:Light");
         checkBtn.checked = false;
         DLTheme(Theme.Light)
         removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
-    }else if (version == 1) {
+    }else if (version == 2) {
         console.log("当前主题:Dark");
         checkBtn.checked = true;
         DLTheme(Theme.Dark)
