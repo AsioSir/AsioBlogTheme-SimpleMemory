@@ -36,7 +36,13 @@
         --AidColor2: #ff2e2e;
         --AidColor3: #36c67d;
 
-        /*关联博客颜色*/
+        --HCOLOR1: #00BFFF;
+        --HCOLOR2: #CC99FF;
+        --HCOLOR3: #FFA07A;
+        --HCOLOR4: #66CDAA;
+        --HCOLOR5: #00ae9d;
+
+            /*关联博客颜色*/
         --AsioRPColor: #867892;
         --CsdnColor: #FF9900;
 
@@ -110,28 +116,28 @@
     }
     /*标题h1,h2样式*/
     h1 .dev__title{
-        color:#66CCFF;
+        color: var(--HCOLOR1);
     }
     h1 .dev__fe i{
-        color:#66CCFF;
+        color: var(--HCOLOR1);
     }
     h1 .dev__slash{
-        color:#66CCFF;
+        color:var(--HCOLOR1);
     }
     h1 .dev__ux i{
-        color:#66CCFF;
+        color:var(--HCOLOR1);
     }
     h2 .dev__title{
-        color:#96CCFF;
+        color:var(--HCOLOR2);
     }
     h2 .dev__fe i{
-        color:#96CCFF;
+        color:var(--HCOLOR2);
     }
     h2 .dev__slash{
-        color:#96CCFF;
+        color:var(--HCOLOR2);
     }
     h2 .dev__ux i{
-        color:#96CCFF;
+        color:var(--HCOLOR2);
     }
     /*随笔样式*/
     .day,.entrylistItem{
@@ -487,8 +493,9 @@
         border-radius: 4px;
         order: -1;
     }
-    h1{
-
+    .blog_comment_body img{
+        max-width: 100% !important;
+        max-height: none!important;
     }
 }
 
@@ -1352,6 +1359,9 @@
 
             .blog_comment_body img {
                 vertical-align: middle;
+                width: auto!important;
+                min-width: 32px!important;
+                min-height: 32px!important;
             }
 
             .blog_comment_body br {
@@ -1426,6 +1436,10 @@
     #comment_form_container #tbCommentBody{
         margin-top:-10px;
     }
+    .blog_comment_body img{
+        max-width: 98% !important;
+        max-height: none!important;
+    }
 }
 @media only screen and (max-width:420px) {
     .commentbox_title_right img {
@@ -1465,6 +1479,10 @@
     #btn_comment_submit{
         margin-right: 40px;
     }
+    .blog_comment_body img{
+        max-width: 100% !important;
+        max-height: none!important;
+    }
 }
 
 
@@ -1493,8 +1511,75 @@
     color:var(--CsdnColor)!important;
 }
 .tip{
-    color: #ff6100;
+    color: #FFA500!important;
 }
 .lightFont{
-    color: #FF3333;
+    color: #FF3333!important;
+}
+
+.hcolor-1 font, .hcolor-1 .dev__title, .hcolor-1 .dev__fe i, .hcolor-1 .dev__slash, .hcolor-1  .dev__ux i{
+    color: var(--HCOLOR1)!important;
+}
+.hcolor-2 font, .hcolor-1 .dev__title, .hcolor-1 .dev__fe i, .hcolor-1 .dev__slash, .hcolor-1  .dev__ux i{
+    color:  var(--HCOLOR2)!important;
+}
+.hcolor-3 font, .hcolor-1 .dev__title, .hcolor-1 .dev__fe i, .hcolor-1 .dev__slash, .hcolor-1  .dev__ux i{
+    color:  var(--HCOLOR3)!important;
+}
+.hcolor-4 font, .hcolor-1 .dev__title, .hcolor-1 .dev__fe i, .hcolor-1 .dev__slash, .hcolor-1  .dev__ux i{
+    color:  var(--HCOLOR4)!important;
+}
+.hcolor-5 font, .hcolor-1 .dev__title, .hcolor-1 .dev__fe i, .hcolor-1 .dev__slash, .hcolor-1  .dev__ux i{
+    color:  var(--HCOLOR5)!important;
+}
+.scolor-1 strong{
+    color: #AFE2E3 !important;
+}
+.scolor-2 strong{
+    color: #9DFFB2 !important;
+}
+.scolor-3 strong{
+    color: #FF8080!important;
+}
+.scolor-4 strong{
+    color: #FF9966!important;
+}
+.color1-1{
+	color: #669999!important;
+}
+.color1-2{
+	color: #CC6666!important;
+}
+.color1-3{
+	color: #00a6ac!important;
+}
+.color1-4{
+	color: #FF6633!important;
+}
+.color1-5{
+	color: #FF3366!important;
+}
+.color1-6{
+	color: #00BFFF!important;
+}
+.color1-7{
+	color: #66FF66!important;
+}
+.color1-8{
+	color: #29B4D1!important;
+}
+.color1-9{
+	color: #aa99FF!important;
+}
+.color1-10{
+	color: #FF33FF!important;
+}
+.color1-11{
+	color: #FF9900!important;
+}
+.color1-12{
+	color: #CC88FF!important;
+}
+.color1-13{
+    color: #33cccc!important;
 }

@@ -836,7 +836,7 @@ p.article-info-text > .postMeta i {
 }
 
 .feedbackManage {
-    width: 200px;
+    max-width: 150px;
     text-align: right;
     float: right
 }

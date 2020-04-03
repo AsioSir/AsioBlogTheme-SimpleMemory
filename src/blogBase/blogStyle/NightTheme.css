@@ -1,0 +1,266 @@
+/* 设置全局变量 */
+@media screen and (min-width:0px) {
+    :root {
+        /* 主题色 */
+        --ThemeColor: #ff9e24!important;
+        /* 字体色 */
+        --TextColor1: #98A38D!important;
+        --TextColor2: #6A737D!important;
+        --TextColor3: #afaeaf!important;
+        /* 分割线色 */
+        --DividColor: #FF4949!important;
+        --BlockColor: #20242b!important;
+        /*下划线*/
+        --hrColor:rgba(26, 41, 51,0.8) !important;
+        --DTitleHrColor:#293047!important;
+
+
+        /*表格颜色*/
+        --TableBackgroundColor:rgba(32, 36, 43,1)!important;
+        --TablethColor: rgba(255, 110, 110,1)!important;
+        --TableFColor: rgba(40, 44, 52,1)!important;
+        --TableSColor: rgba(36, 40, 48,1)!important;
+        --TablethFontColor:rgba(255, 255, 255,1)!important;
+        --TabletdFontColor:rgba(255, 110, 110,1)!important;
+        --TableLineColor:rgba(32, 36, 43,1)!important;
+        --TableHover: rgba(19, 12, 14,.8)!important;
+
+
+
+        /* 板块色 */
+        --BackgroundColor: #282c34!important;
+        /* 辅助色 */
+        --AidColor1: #fa7d00!important;
+        --AidColor2: #ff2e2e!important;
+        --AidColor3: #36c67d!important;
+        /* 字体级别 */
+        --text1: 28px;
+        --text2: 26px;
+        --text3: 24px;
+        --text4: 22px;
+        --text5: 20px;
+        --text6: 18px;
+        --textNoraml: 16px;
+        /* 背景图透明层 */
+        --ImgShadow: rgba(0, 0, 0, 0.29);
+        --screen: 100vh;
+        --screen1: 40vh;
+        transition: all 200ms ease-in-out;
+        -webkit-transition: all 200ms ease-in-out;
+    }
+
+}
+body,#main,#home{
+    background:#20242B!important;
+}
+
+
+/*公告*/
+#card {
+    background: #1f1f2d!important;
+}
+.time{
+  color: #b3c7ff!important;
+}
+.description{
+    color: rgb(255, 196, 172) !important;
+}
+
+/*body{*/
+    /*background:#333333!important;*/
+/*}*/
+/*列表页样式*/
+.day,.entrylistItem{
+    background-color: rgba(72, 72, 72,0.3)!important;
+}
+.postTitle .postTitle2 ,.entrylistPosttitle .entrylistItemTitle{
+    color: rgba(138, 118, 93,0.8)!important;
+}
+.day .postTitle2:hover ,.entrylistItem .entrylistItemTitle:hover{
+    color: var(--ThemeColor)!important;
+}
+
+
+/*posted信息样式*/
+.postDesc,entrylistItemPostDesc{
+    color:#FF0000!important;
+}
+.postDesc a:link, .postDesc a:visited, .postDesc a:active {
+    color: #2c9781!important;
+}
+.entrylistItemPostDesc a:link, .entrylistItemPostDesc a:visited, .entrylistItemPostDesc a:active {
+    color: #2c9781!important;
+}
+
+.post .postBody hr {
+    background-color: var(--hrColor)!important;
+}
+
+#myposts .PostList{
+    background-color: rgba(72, 72, 72,0.3)!important;
+}
+
+
+
+.day:after, .entrylistItem:after {
+    border: #26353e 1px solid!important;
+    background: #423d3d!important;
+    border-radius: 100%!important;
+    box-shadow: rgba(39, 35, 35, 0.7) 0 0 0 5px!important;
+}
+
+
+
+/*看板娘字体颜色*/
+.waifu-tips{
+    color: cyan!important;
+}
+/*标题下划线*/
+.header__span{
+    border-image: linear-gradient(to right,#48c9b0,#FF3333,#99FF00,#CC00CC,#eee)!important;
+    border-image-slice: 30!important;
+}
+
+/*posted标题信息颜色*/
+.postDesc a:link,.postDesc a:visited,.postDesc a:active {
+    color: #00ae9d!important;
+}
+
+.postDesc a:hover {
+    color: #08F9DA!important;
+    text-decoration: none
+}
+
+/*评论输入框*/
+.comment_textarea{
+    border: 1px solid #2c3e50!important;
+    border-radius: 6px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: rgba(32, 36, 43,0.5) !important;
+}
+#comment_form_container #tbCommentBody{
+    color: #FF9900!important;
+    border: 1px solid #5a5f5c!important;
+    background:rgba(102, 102, 102,0.3)url(https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/comment-miao-bg.png) right -65px!important;
+    background-size: 250px!important;
+    background-repeat: no-repeat!important;
+    background-position:bottom right!important;
+}
+#comment_form_container #tbCommentBody:hover {
+    border: 1px solid var(--ThemeColor) !important;
+    transition: all .4s linear 0s!important;
+}
+.commentbox_title,.commentbox_footer{
+    border-bottom: 1px solid #945f21!important;
+}
+
+/*评论区字体颜色*/
+.conmts p {
+    color: #99CCCC!important;
+}
+
+.blog_comment_body{
+    background-color: rgba(44, 47, 52,1)!important;
+    box-shadow: 0 1px 20px -6px rgba(0, 0, 0,.3) !important;
+    transition: box-shadow .3s ease!important;
+}
+
+/*博主信息块*/
+.essaySuffix-box {
+    background: rgba(65, 72, 87,1) !important;
+    border: 1px solid rgba(32, 36, 43,1) !important;
+    color: rgba(211, 215, 212,1)!important;
+    text-indent: 0;
+}
+
+#comment_form_container #commentform_title {
+    border-bottom: 2px solid var(--DTitleHrColor)!important;
+}
+
+#blog-comments-placeholder .feedback_area_title {
+    border-bottom: 2px solid var(--DTitleHrColor)!important;
+}
+
+/*表格样式*/
+#cnblogs_post_body table {
+    background-color: var(--TableBackgroundColor)!important;
+}
+.post .postBody table tr {
+    background-color: var(--TableFColor) !important;
+}
+#cnblogs_post_body table tr:hover{
+    background: var(--TableHover) !important;
+}
+.post .postBody table tr:nth-child(2n) {
+    background-color: var(--TableSColor) !important;
+}
+.post .postBody table th {
+    background-color: var(--TablethColor) !important;
+    border: 1px solid var(--TableLineColor) !important;
+    color: var(--TablethFontColor)!important;
+}
+#cnblogs_post_body table td {
+    color: var(--TabletdFontColor) !important;
+}
+.post .postBody table td {
+    border: 1px solid var(--TableLineColor) !important;
+}
+
+/*@颜色*/
+.blog_comment_body a{
+    color: #000;
+}
+
+
+font{
+    font-family: Helvetica,Verdana,Arial,sans-serif;
+    color:#cfcfcf;
+}
+strong{
+color:#FF8080;
+}
+li p font{
+    color: var(--TextColor3);
+}
+#cnblogs_post_body h3,#cnblogs_post_body h4,#cnblogs_post_body h5,#cnblogs_post_body h6{
+    font-family: "Merriweather","Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+    color: #f0f0f0!important;
+}
+#cnblogs_post_body h6{
+    background-color: #80808021;
+    color: #e74c3c!important;
+    border-left: 5px solid #34495e!important;
+}
+.cnblogs-markdown p:first-child font{
+    color: var(--TextColor2) !important;
+}
+
+/*emotion*/
+.OwO .OwO-logo{
+    background: #191717!important;
+    border: 1px solid #808080!important;
+    color: #a7adb1!important;
+}
+#emotions{
+    background: #434343!important;
+    box-shadow: 0 0 8px grey!important;
+    border: 1px solid #808080!important;
+}
+#emotions .container a{
+    border: 1px solid #555!important;
+}
+#emotions .categorys a.current{
+    border-bottom: 2px solid #e85242!important;
+    background: #555555!important;
+}
+#emotions .categorys a{
+    border: 2px solid #555!important;
+}
+#emotions #prev, #emotions #next{
+    background: #666666!important;
+}
+
+.lightFont{
+    color: #33CCFF!important;
+}

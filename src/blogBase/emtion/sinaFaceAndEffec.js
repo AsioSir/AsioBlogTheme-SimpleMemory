@@ -59,7 +59,8 @@ function AnalyticEmotion(s) {
 			for(var i = 0; i < sArr.length; i++){
 				if(uSinaEmotionsHt.containsKey(sArr[i])) {
 					//<img src="url" class="emotionImg">
-					var reStr = "<img src=\"" + uSinaEmotionsHt.get(sArr[i]) + "\" class=\"emotionImg\">";
+					// var reStr = "<img src=\"" + uSinaEmotionsHt.get(sArr[i]) + "\" class=\"emotionImg\">";
+					var reStr = "![](" + uSinaEmotionsHt.get(sArr[i]) + ")";
 					s = s.replace(sArr[i], reStr);
 				}
 			}
