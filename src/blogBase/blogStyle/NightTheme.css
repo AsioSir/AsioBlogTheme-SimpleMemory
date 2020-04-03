@@ -56,13 +56,13 @@ body,#main,#home{
 
 
 /*公告*/
-#card {
+#notice_card {
     background: #1f1f2d!important;
 }
-.time{
+.notice_time{
   color: #b3c7ff!important;
 }
-.description{
+.notice_description{
     color: rgb(255, 196, 172) !important;
 }
 
