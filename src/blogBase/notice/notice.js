@@ -17,6 +17,6 @@ $(document).ready(function(){
     function animTimer(){
         setTimeout(function () {
             testAnim(removeanim);
-        },2500)
+        },3000)
     }
 });

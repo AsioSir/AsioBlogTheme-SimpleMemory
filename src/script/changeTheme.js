@@ -6,6 +6,7 @@ $(document).ready(function (){
     var date = new Date();
     //加载cookie中的主题version
     var version = getCookie("AsioTheme");
+    console.log("主题version:" + version)
     // 按钮元素
     var checkBtn = document.getElementById('ckbx-style-13-1');   //input
     if(checkBtn != null&&checkBtn!=undefined){
@@ -49,15 +50,13 @@ function  LoadingTheme(version,checkBtn){
         var hour = new Date().getHours();
         //白天
         if(hour >= 8 && hour < 18){
-            console.log("当前主题:Light");
-            checkBtn.checked = false;
+            console.log(thistime + " 默认Light主题")
             DLTheme(Theme.Light)
             removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
         }
         //夜晚
         if((hour => 18 && hour <= 23) || (hour >= 0 && hour < 8)){
-            console.log("当前主题:Dark");
-            checkBtn.checked = true;
+            console.log(thistime + " 默认Dark主题)
             DLTheme(Theme.Dark)
             loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
         }

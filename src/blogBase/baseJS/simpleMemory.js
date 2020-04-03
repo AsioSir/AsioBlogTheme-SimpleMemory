@@ -1,5 +1,5 @@
 window.cnblogsConfig = {
-    GhVersions    : 'v2020.4.3', // 版本
+    GhVersions    : '2020.4.4', // 版本
     blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
     blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
     blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
@@ -104,7 +104,7 @@ if (initCheck()) {
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
-        GhVersions: 'v2020.4.3',   //GitHub发布版本或提交哈希值，根据版本加载代码。
+        GhVersions: '2020.4.4',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
         isVersionMapping: true,
 		codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
