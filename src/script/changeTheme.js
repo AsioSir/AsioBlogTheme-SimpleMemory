@@ -3,7 +3,6 @@
 //
 // }
 $(document).ready(function (){
-    console.log("AsioTheme")
     var date = new Date();
     //加载cookie中的主题version
     var version = getCookie("AsioTheme");
@@ -34,7 +33,7 @@ $(document).ready(function (){
 });
 
 function  LoadingTheme(version,checkBtn){
-    var thistime = "当前时间 " + date.toLocaleTimeString('chinese',{hour12:false});
+    var thistime = "当前时间 " + new Date().toLocaleTimeString('chinese',{hour12:false});
     if(version == 0){
         console.log("当前主题:Light");
         checkBtn.checked = false;
