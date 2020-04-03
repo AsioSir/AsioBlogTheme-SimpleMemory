@@ -51,14 +51,14 @@ function  LoadingTheme(version,checkBtn){
         //白天
         if(hour >= 8 && hour < 18){
             console.log(thistime + " 默认Light主题")
-            checkBtn.checked = true;
+            checkBtn.checked = false;
             DLTheme(Theme.Light)
             removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
         }
         //夜晚
         if((hour => 18 && hour <= 23) || (hour >= 0 && hour < 8)){
             console.log(thistime + " 默认Dark主题");
-            checkBtn.checked = false;
+            checkBtn.checked = true;
             DLTheme(Theme.Dark);
             loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
         }
