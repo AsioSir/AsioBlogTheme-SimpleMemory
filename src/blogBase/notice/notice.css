@@ -16,8 +16,8 @@
 
 .notice_time{
     position: absolute;
-    top: 6px;
-    left: 6px;
+    top: 8px;
+    right: 8px;
     font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-weight: bold;
     color: #b3c7ff;
@@ -45,8 +45,8 @@
     margin-top: 5px;
     margin-bottome: 5px;
     background-image: -webkit-linear-gradient(left, #FF9115,#FFE873 10%, #FFB833 20%, #ffb268 30%, #FF9D3A 40%, #FFE873 50%,#a0ff56 60%,#FFE873 70%,#FF9D3A 80%,#FFE873 90%,#FF9115 100%);
-    -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
-    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-text-fill-color: transparent;/* 灏嗗瓧浣撹缃垚閫忔槑鑹� */
+    -webkit-background-clip: text;/* 瑁佸壀鑳屾櫙鍥撅紝浣挎枃瀛椾綔涓鸿鍓尯鍩熷悜澶栬鍓� */
     -webkit-background-size: 200% 100%;
     -webkit-animation: masked-animation 4s linear infinite;
 }
