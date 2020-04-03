@@ -1,0 +1,130 @@
+#card {
+    position: fixed;
+    /*position: relative;*/
+    /*top: -100%;*/
+    /*top: -100%;*/
+
+    background: #1f1f2d;
+    width: 98.6%;
+    margin: -8px auto;
+    border-radius: 0 0 12px 12px;
+    border-top: 6px solid #00D600;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-sizing: border-box;
+    padding: 2px;
+    text-align: center;
+    z-index: 10000;
+}
+
+.time{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: bold;
+    color: #b3c7ff;
+}
+.product {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: inherit;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+.product.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.thumbnail img{
+    height: 80px;
+}
+.title{
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottome: 5px;
+    background-image: -webkit-linear-gradient(left, #FF9115,#FFE873 10%, #FFB833 20%, #ffb268 30%, #FF9D3A 40%, #FFE873 50%,#a0ff56 60%,#FFE873 70%,#FF9D3A 80%,#FFE873 90%,#FF9115 100%);
+    -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-background-size: 200% 100%;
+    -webkit-animation: masked-animation 4s linear infinite;
+
+}
+.description{
+    font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 1.1rem;
+    color: rgb(255, 196, 172);
+}
+
+@keyframes masked-animation {
+    0% {
+        background-position: 0  0;
+    }
+    100% {
+        background-position: -100%  0;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.fadeInDown {
+    animation:fadeInDown 1.5s ease;
+    -webkit-animation:fadeInDown 1.5s ease;
+}
+
+@-webkit-keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+.fadeOutUp {
+    animation:fadeOutUp 1.5s ease 1 alternate forwards;
+    -webkit-animation:fadeOutUp 1.5s ease 1 alternate forwards;
+}

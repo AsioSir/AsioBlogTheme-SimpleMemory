@@ -4,6 +4,7 @@
 // }
 $(document).ready(function (){
     console.log("AsioTheme")
+    var date = new Date();
     //加载cookie中的主题version
     var version = getCookie("AsioTheme");
     // 按钮元素
@@ -16,13 +17,13 @@ $(document).ready(function (){
         checkBtn.addEventListener('click', function(){
             if(checkBtn.checked){
                 console.log("当前主题:Dark");
-                //AsioTheme值存为1,保存30天cookie
-                setCookie("AsioTheme","1",7*24, "/asio");
+                //AsioTheme值存为1,保存一天cookie，0-1点自动清零
+                setCookie("AsioTheme","1",24 - date.getHours(), "/asio");
                 DLTheme(Theme.Dark)
                 loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
             }else{
                 console.log("当前主题:Light")
-                setCookie("AsioTheme","0",7*24,"/asio");
+                setCookie("AsioTheme","0",24 - date.getHours(),"/asio");
                 DLTheme(Theme.Light)
                 removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
             }
@@ -33,25 +34,34 @@ $(document).ready(function (){
 });
 
 function  LoadingTheme(version,checkBtn){
-    console.log("LoadingTheme")
+    var thistime = "当前时间 " + date.toLocaleTimeString('chinese',{hour12:false});
     if(version == 0){
         console.log("当前主题:Light");
-        setCookie("AsioTheme","0",7*24,"/asio");
         checkBtn.checked = false;
         DLTheme(Theme.Light)
         removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
     }else if (version == 1) {
         console.log("当前主题:Dark");
-        setCookie("AsioTheme","1",7*24,"/asio");
         checkBtn.checked = true;
         DLTheme(Theme.Dark)
         loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
     }else{
-        console.log("当前主题:--Light");
-        setCookie("AsioTheme","0",7*24,"/asio");
-        checkBtn.checked = false;
-        DLTheme(Theme.Light)
-        removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
+        console.log('\n' + ' %c 默认主题，自动[8:00-18:00]:LightTheme [18:00-8:00]:DarkTheme %c ' + thistime + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
+        var hour = new Date().getHours();
+        //白天
+        if(hour >= 8 && hour <= 18){
+            console.log("当前主题:Light");
+            checkBtn.checked = false;
+            DLTheme(Theme.Light)
+            removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
+        }
+        //夜晚
+        if((hour >= 18 && hour <= 23) || (hour >= 0 && hour <= 8)){
+            console.log("当前主题:Dark");
+            checkBtn.checked = true;
+            DLTheme(Theme.Dark)
+            loadjscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
+        }
     }
 }
 
