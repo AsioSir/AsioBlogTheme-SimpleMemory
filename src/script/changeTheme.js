@@ -48,14 +48,14 @@ function  LoadingTheme(version,checkBtn){
         console.log('\n' + ' %c 默认主题，自动[8:00-18:00]:LightTheme [18:00-8:00]:DarkTheme %c ' + thistime + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
         var hour = new Date().getHours();
         //白天
-        if(hour >= 8 && hour <= 18){
+        if(hour >= 8 && hour < 18){
             console.log("当前主题:Light");
             checkBtn.checked = false;
             DLTheme(Theme.Light)
             removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
         }
         //夜晚
-        if((hour >= 18 && hour <= 23) || (hour >= 0 && hour <= 8)){
+        if((hour => 18 && hour <= 23) || (hour >= 0 && hour < 8)){
             console.log("当前主题:Dark");
             checkBtn.checked = true;
             DLTheme(Theme.Dark)
