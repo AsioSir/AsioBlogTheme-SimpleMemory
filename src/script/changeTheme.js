@@ -56,7 +56,7 @@ function  LoadingTheme(version,checkBtn){
             removejscssfile("https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/src/style/NightTheme.css","css");
         }
         //夜晚
-        if((hour => 18 && hour <= 23) || (hour >= 0 && hour < 8)){
+        if((hour >= 18 && hour <= 23) || (hour >= 0 && hour < 8)){
             console.log(thistime + " 默认Dark主题");
             checkBtn.checked = true;
             DLTheme(Theme.Dark);
