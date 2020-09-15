@@ -1,9 +1,9 @@
-$(document).ready(function (){
+/*-----------------------------------------加载表情------------------------------------------------*/
+$(function(){
     loadingemem()
 });
-
 function loadingemem() {
-    console.log("loading")
+    console.log("loading emtion")
     var memeDiv = document.createElement("div");
     var commontEle = document.getElementsByClassName("commentbox_main")[0];
     var emeBtn = document.getElementById('btn_comment_submit');

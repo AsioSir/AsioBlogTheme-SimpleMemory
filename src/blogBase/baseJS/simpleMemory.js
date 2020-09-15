@@ -1,5 +1,5 @@
 window.cnblogsConfig = {
-    GhVersions    : 'v2020.4.7', // 版本
+    GhVersions    : 'v2020.4.9', // 版本
     blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
     blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
     blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
@@ -104,7 +104,7 @@ if (initCheck()) {
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
-        GhVersions: 'v2020.4.7',   //GitHub发布版本或提交哈希值，根据版本加载代码。
+        GhVersions: 'v2020.4.9',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
         isVersionMapping: true,
 		codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
@@ -271,7 +271,20 @@ if (initCheck()) {
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201949ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8318.jpg"
         ],
         homeBannerText: "",//主页banner上的标语，设置此选项会固定显示文字，默认为空，自动获取一句
-        homeBannerTextType: "jinrishici",//主页 banner 上的标语获取源，默认为 jinrishici 每次刷新随机获取一句古诗词
+        homeBannerTextType: "hitokotoType",//主页 banner 上的标语获取源，默认为hitokotoType, jinrishici 每次刷新随机获取一句古诗词   one:每日一句
+        hitokotoType: "",  //格式：?c=a&c=b，可多个类型组合，不写默认随机
+        //hitokotoType
+        // a	动画
+        // b	漫画
+        // c	游戏
+        // d	文学
+        // e	原创
+        // f	来自网络
+        // g	其他
+        // h	影视
+        // i	诗词
+        // j	网易云
+        // k	哲学
         essayTopImg: [//文章页banner图片Url，推荐尺寸>= 1920*1080，支持多张，每次刷新随机设置一张
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217113617ACG%E2%99%A5%E6%9A%97%E9%BB%91%E7%B3%BB24.jpg",
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114042ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F12.jpg",

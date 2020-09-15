@@ -1,7 +1,4 @@
 // 页面加载完成执行
-// window.onload = function () {
-//
-// }
 $(document).ready(function (){
     var date = new Date();
     //加载cookie中的主题version

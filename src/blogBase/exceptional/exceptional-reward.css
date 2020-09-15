@@ -144,11 +144,13 @@
     clear:both;
 }
 .shang_info p,.shang_info a{
-    color:#33CCFF;
+    color: #ff533a;
     text-align:center;
-    font-size:12px;
+    font-family: "楷体";
+    font-size:1.4rem;
+    font-weight: bold;
     text-decoration:none;
-    line-height:2em;
+    line-height:1.8rem;
 }
 .xclose{
     width: 11px;

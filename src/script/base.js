@@ -859,7 +859,7 @@ function Base() {
      * 设置主页标语
      */
     this.setHitokoto = function() {
-
+        tools.consoleText(window.cnblogsConfig.homeBannerText,'random');
         if (window.cnblogsConfig.homeBannerText !== "") {
             $('#hitokoto').text(window.cnblogsConfig.homeBannerText).css('display', '-webkit-box');
             bndongJs.setDomHomePosition();
@@ -886,27 +886,68 @@ function Base() {
             '当你凝视深渊时，深渊也在凝视着你。',
             '有的人25岁就死了，只是到75岁才埋葬'
         ];
-
-        var settings = {};
         switch (window.cnblogsConfig.homeBannerTextType) {
-            case "one": //  ONE . 每日一句
-                settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "https://sentence.iciba.com/index.php?callback=onecallback&c=dailysentence&m=getdetail&title=" + tools.getNowFormatDate(),
-                    "method": "POST",
-                    "dataType": 'jsonp',
-                    "headers": {
-                        "content-type": "application/x-www-form-urlencoded",
-                    },
-                    "data": {
-                        "TransCode": "030111",
-                        "OpenId": "123456789",
-                        "Body": ""
-                    }
-                };
+            case "hitokoto":
+            default:
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://v1.hitokoto.cn' + window.cnblogsConfig.hitokotoType,
+                    dataType: 'json',
+                    jsonp: 'callback',
+                    jsonpCallback: 'hitokoto',
+                    success (response) {
+                        if (response.id != null && response.id!=undefined && response.id!=""){
+                            $('#hitokoto').text(response.hitokoto).css('display', '-webkit-box');
+                            if (response.type === "i"){
+                                $('#hitokotoAuthor').text('《'+response.from+'》 - '+' - '+response.from_who).show();
+                            }else {
+                                if (response.from_who!=null && response.from_who!= "null" && response.from_who != ""){
+                                    $('#hitokotoAuthor').text('<'+response.from + '>'+' - ' + response.from_who).show();
+                                } else {
+                                    $('#hitokotoAuthor').text(response.from).show();
+                                }
+                            }
+                        }else {
+                            var listIndex = tools.randomNum(0, topTitleList.length - 1);
+                            $('#hitokoto').text(topTitleList[listIndex]).css('display', '-webkit-box');
+                        }
+                        bndongJs.setDomHomePosition();
+                        return false;
 
-                $.ajax(settings).done(function (response) {
+                    },
+                    error () {
+                        var listIndex = tools.randomNum(0, topTitleList.length - 1);
+                        $('#hitokoto').text(topTitleList[listIndex]).css('display', '-webkit-box');
+                        bndongJs.setDomHomePosition();
+                        return false;
+                    }
+                });
+                break;
+
+            case "one": //  ONE . 每日一句
+                $.ajax(
+                    {
+                        async: true,
+                        crossDomain: true,
+                        url: "https://sentence.iciba.com/index.php?callback=onecallback&c=dailysentence&m=getdetail&title=" + tools.getNowFormatDate(),
+                        method: "POST",
+                        dataType: 'jsonp',
+                        headers: {
+                            "content-type": "application/x-www-form-urlencoded",
+                        },
+                        data: {
+                            "TransCode": "030111",
+                            "OpenId": "123456789",
+                            "Body": ""
+                        },
+                        error:function () {
+                            var listIndex = tools.randomNum(0, topTitleList.length - 1);
+                            $('#hitokoto').text(topTitleList[listIndex]).css('display', '-webkit-box');
+                            bndongJs.setDomHomePosition();
+                            return false;
+                        }
+                    }
+                ).done(function (response) {
                     if (response.errno === 0) {
                         $('#hitokoto').text(response.note).css('display', '-webkit-box');
                         $('#hitokotoAuthor').text(response.content).show();
@@ -920,15 +961,21 @@ function Base() {
                 break;
 
             case "jinrishici":
-            default: // 今日诗词
-                settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "https://v2.jinrishici.com/one.json",
-                    "method": "GET"
-                };
-
-                $.ajax(settings).done(function (response) {
+           // 今日诗词
+                $.ajax(
+                    {
+                        async: true,
+                        crossDomain: true,
+                        url: "https://v2.jinrishici.com/one.json",
+                        method: "GET",
+                        error:function () {
+                            var listIndex = tools.randomNum(0, topTitleList.length - 1);
+                            $('#hitokoto').text(topTitleList[listIndex]).css('display', '-webkit-box');
+                            bndongJs.setDomHomePosition();
+                            return false;
+                        }
+                    }
+                ).done(function (response) {
                     if (response && response.status === "success") {
                         $('#hitokoto').text(response.data.content).css('display', '-webkit-box');
                         $('#hitokotoAuthor').text('《'+response.data.origin.title+'》 - '+response.data.origin.dynasty+' - '+response.data.origin.author).show();
