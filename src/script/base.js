@@ -255,6 +255,7 @@ function Base() {
      * 右下角菜单事件处理
      */
     this.rightMenuMous = function(parentObject, subObject) {
+        console.log(subObject)
         $(parentObject).on({
             mouseover : function(){
                 var str = '';
@@ -279,7 +280,6 @@ function Base() {
                 $(subObject).show();
             },
             mouseout : function(){
-                console.log(subObject)
                 if (subObject === '.rightDanshanSpan')  {
                     console.log("88888888");
                     $("#waifu").css("opacity","1");
