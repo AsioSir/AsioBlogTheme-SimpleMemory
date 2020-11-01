@@ -112,7 +112,6 @@ if (initCheck()) {
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
         GhVersions: 'v2020.11.01',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
-        isVersionMapping: true,
         codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
         blogUser: "",   //用户昵称，默认抓取博客园用户名
         blogAvatar: "",  //用户头像图片Url。
@@ -388,7 +387,12 @@ if (initCheck()) {
         ],//控制台输出
         bookList: [ ],
         themeAuthor: false,   //是否显示主题作者
-        isVersionMapping: false     //是否版本映射
+        isVersionMapping: false,     //是否版本映射
+        reward: {
+            enable: false,
+            wechatpay: '',
+            alipay: ''
+        }
         /*
         *关于转载文章在Html源码中加入如下代码来指定文章作者和来源：
             <input id="articleAuthor" type="hidden" value="作者" />

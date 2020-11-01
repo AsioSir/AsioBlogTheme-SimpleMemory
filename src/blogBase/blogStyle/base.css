@@ -645,9 +645,9 @@ p.article-info-text > .postMeta i {
 }
 
 /*#calendar td {*/
-    /*font-family: "Comic Sans MS";*/
-    /*background: #FFF;*/
-    /*padding-top: 2px*/
+/*font-family: "Comic Sans MS";*/
+/*background: #FFF;*/
+/*padding-top: 2px*/
 /*}*/
 
 .Cal {
@@ -3405,14 +3405,14 @@ blockquote p {
 }
 
 /*#commentform_title:after, .entrylistTitle:after, .feedback_area_title:after {*/
-    /*content: '';*/
-    /*display: block;*/
-    /*width: 100%;*/
-    /*text-align: center;*/
-    /*position: relative;*/
-    /*bottom: 16px;*/
-    /*left: 110px;*/
-    /*border-bottom: 1px dashed #e9e9e9*/
+/*content: '';*/
+/*display: block;*/
+/*width: 100%;*/
+/*text-align: center;*/
+/*position: relative;*/
+/*bottom: 16px;*/
+/*left: 110px;*/
+/*border-bottom: 1px dashed #e9e9e9*/
 /*}*/
 
 #tbCommentBody {
@@ -3433,7 +3433,7 @@ blockquote p {
     font-size: 24px !important
 }
 
-#attention, #rightBuryit, #rightDiggit, #toUpDown {
+#attention, #rightBuryit, #rightDiggit, #rightDashang, #toUpDown {
     cursor: pointer;
     color: #555;
     opacity: .5;
@@ -3444,18 +3444,23 @@ blockquote p {
 }
 
 #attention {
-    bottom: 5px
+    bottom: 3px
 }
 
 #rightBuryit {
-    bottom: 8px
+    bottom: 5px
 }
 
-#rightDiggit {
-    bottom: 15px
+#rightDiggit, #rightDashang {
+    bottom: 11px
 }
 
-#attention:hover, #rightBuryit:hover, #rightDiggit:hover, #toUpDown:hover {
+#rightDashang i {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#attention:hover, #rightBuryit:hover, #rightDiggit:hover, #rightDashang:hover, #toUpDown:hover {
     opacity: 1;
     filter: Alpha(opacity=100)
 }
@@ -3468,6 +3473,54 @@ blockquote p {
     width: 140px;
     text-align: right;
     display: none
+}
+
+.rightDanshanSpan {
+    bottom: -120px;
+}
+
+.ds-pay {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.ds-alipay, .ds-wecat {
+    cursor: pointer;
+    text-align: center;
+    width: 140px;
+    height: 140px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 7px;
+    border-radius: 0 6px 6px 6px;
+    transition: all 1s ease-in-out 0s;
+    margin: 3px 0;
+    position: relative;
+    padding: 5px;
+    background: #fff;
+}
+
+.ds-alipay img, .ds-wecat img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.ds-alipay span, .ds-wecat span {
+    position: absolute;
+    font-family: 'Ubuntu Mono',monospace;
+    left: -30px;
+    top: 14px;
+    background: #fff;
+    color: #777;
+    padding: 3px 6px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 7px;
+    border-radius: 0 0 6px 6px;
+    font-size: .85em;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
 }
 
 #cnblogs_post_body table td, #cnblogs_post_body table th {
