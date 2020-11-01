@@ -279,6 +279,11 @@ function Base() {
                 $(subObject).show();
             },
             mouseout : function(){
+                console.log(subObject)
+                if (subObject === '.rightDanshanSpan')  {
+                    console.log("88888888");
+                    $("#waifu").css("opacity","1");
+                }
                 $(subObject).hide();
             },
             click: function () {
@@ -303,13 +308,6 @@ function Base() {
                             }
                         }
                     }
-                }
-
-
-                console.log(subObject)
-                if (subObject === '.rightDanshanSpan')  {
-                    console.log("88888888");
-                    $("#waifu").css("opacity","1");
                 }
 
                 if (subObject === '.toUpDownSpan') {
