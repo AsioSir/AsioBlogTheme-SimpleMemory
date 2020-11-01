@@ -888,6 +888,7 @@ function Base() {
         ];
 
         var settings = {};
+        var hitokotoUrl =  'https://v1.hitokoto.cn' +  window.cnblogsConfig.hitokotoType;
         switch (window.cnblogsConfig.homeBannerTextType) {
             case "one": //  ONE . 每日一句
                 settings = {
@@ -944,12 +945,12 @@ function Base() {
             default: // 一言
                 $.ajax({
                     type: 'GET',
-                    url: 'https://v1.hitokoto.cn' +  window.cnblogsConfig.hitokotoType,
+                    url: hitokotoUrl,
                     dataType: 'json',
                     jsonp: 'callback',
                     jsonpCallback: 'hitokoto',
                     success (response) {
-                        tools.consoleText("每日一言" + url + '\n' + response.hitokoto,'random')
+                        tools.consoleText("每日一言" + hitokotoUrl + '\n' + response.hitokoto,'random')
                         if (response.id != null && response.id!=undefined && response.id!=""){
                             $('#hitokoto').text(response.hitokoto).css('display', '-webkit-box');
                             if (response.from_who!=null && response.from_who!= "null" && response.from_who != "" && response.from_who != undefined){

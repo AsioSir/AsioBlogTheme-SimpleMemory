@@ -1360,7 +1360,7 @@
             .blog_comment_body img {
                 vertical-align: middle;
                 margin-top: -10px;
-                width: 25px!important;
+                /*width: 25px!important;*/
                 min-width: 25px!important;
                 min-height: 25px!important;
             }

@@ -1,9 +1,11 @@
 window.cnblogsConfig = {
-    GhVersions    : 'v2020.4.9', // 版本
+    GhVersions    : 'v2020.11.01', // 版本
     blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
     blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
     blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
 }
+
+//https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@v2020.10.30/src/blogBase/blogStyle/base.css
 
 window.emotion = {
     prevEmotionHtml : "![表情](",
@@ -108,7 +110,7 @@ if (initCheck()) {
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
-        GhVersions: 'v2020.4.9',   //GitHub发布版本或提交哈希值，根据版本加载代码。
+        GhVersions: 'v2020.11.01',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
         isVersionMapping: true,
         codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
@@ -473,36 +475,15 @@ function getVersionConfig() {
             }
         });
 
-    } else if(window.cnblogsConfig.GhUserName === 'BNDong') {
+    } else if(window.cnblogsConfig.GhUserName === 'AsioSir') {
         window.themeVersion = [
             [
-                "v1.1.6",
-                "d8adfb50252062f658350bda29d7145f5eff0b80"
-            ]
-            ,
+                "v2020.4.9",
+                "474cc1f363252c6d5f3094ba67fd1a71c7c13d60"
+            ] ,
             [
-                "v1.1.8",
-                "461aab69de17a84f0af9ff0c326bfcb94438b06c"
-            ]
-            ,
-            [
-                "v1.2.2",
-                "08eab99303d7c463a495adabd8feccc784a8507d"
-            ]
-            ,
-            [
-                "v1.2.3",
-                "36901bf16e2aa3656d4e6f78d44486273b0b8972"
-            ]
-            ,
-            [
-                "v1.2.4",
-                "9354db2147c11fc56cfe02a502f1f8229332fc2f"
-            ]
-            ,
-            [
-                "v1.2.5",
-                "4d744f980758500078df349520472e3b360fb841"
+                "v2020.4.10",
+                "474cc1f363252c6d5f3094ba67fd1a71c7c13d60"
             ]
         ];
         setConfVersion();
