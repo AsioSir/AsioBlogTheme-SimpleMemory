@@ -271,6 +271,11 @@ function Base() {
                     if ($(subObject).text() !== str) {$(parentObject).attr('clickflg', 'false'); $(subObject).text(str);}
                 }
 
+                if (subObject === '.rightDanshanSpan')  {
+                    console.log("9999999");
+                    $("#waifu").css("opacity","0.2");
+                }
+
                 $(subObject).show();
             },
             mouseout : function(){
@@ -298,6 +303,11 @@ function Base() {
                             }
                         }
                     }
+                }
+
+                if (subObject === '.rightDanshanSpan')  {
+                    console.log("88888888");
+                    $("#waifu").css("opacity","1");
                 }
 
                 if (subObject === '.toUpDownSpan') {
