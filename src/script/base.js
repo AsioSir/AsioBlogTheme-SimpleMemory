@@ -305,6 +305,8 @@ function Base() {
                     }
                 }
 
+
+                console.log(subObject)
                 if (subObject === '.rightDanshanSpan')  {
                     console.log("88888888");
                     $("#waifu").css("opacity","1");
