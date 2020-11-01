@@ -55,7 +55,11 @@ function myTools() {
                     console.log('\n' + ' %c ༺ཌ༈君☠纤༈ད༻  CNBlogs %c https://www.cnblogs.com/asio ' + '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');
                 });
                 break;
-
+            case 'single':
+                var colorList = [colors.red, colors.orange, colors.yellow, colors.green, colors.teal, colors.blue, colors.purple, colors.brown];
+                var ind = tools.randomNum(0, colorList.length - 1);
+                console.log('%c'+list.join('\n'), colorList[ind]);
+                break;
             default:
                 console.log('%c'+list.join('\n'), colors.gray);
                 break;

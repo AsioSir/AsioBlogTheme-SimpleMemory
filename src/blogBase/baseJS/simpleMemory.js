@@ -1,5 +1,5 @@
 window.cnblogsConfig = {
-    GhVersions    : 'v2020.11.01', // 版本
+    GhVersions    : 'v2020.11.1', // 版本
     blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
     blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
     blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
@@ -110,7 +110,7 @@ if (initCheck()) {
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
-        GhVersions: 'v2020.11.01',   //GitHub发布版本或提交哈希值，根据版本加载代码。
+        GhVersions: 'v2020.11.1',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
         codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
         blogUser: "",   //用户昵称，默认抓取博客园用户名
@@ -389,9 +389,9 @@ if (initCheck()) {
         themeAuthor: false,   //是否显示主题作者
         isVersionMapping: false,     //是否版本映射
         reward: {
-            enable: false,
-            wechatpay: '',
-            alipay: ''
+            enable: true,
+            wechatpay: 'https://blog-static.cnblogs.com/files/asio/weipayimg.gif',
+            alipay: 'https://blog-static.cnblogs.com/files/asio/alipayimg.gif'
         }
         /*
         *关于转载文章在Html源码中加入如下代码来指定文章作者和来源：
