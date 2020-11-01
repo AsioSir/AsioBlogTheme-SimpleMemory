@@ -958,7 +958,7 @@ function Base() {
                     jsonp: 'callback',
                     jsonpCallback: 'hitokoto',
                     success (response) {
-                        tools.consoleText("每日一言" + hitokotoUrl + '\n' + response.hitokoto,'random')
+                        tools.consoleText("每日一言" + hitokotoUrl + '\n' + response.hitokoto,'single')
                         if (response.id != null && response.id!=undefined && response.id!=""){
                             $('#hitokoto').text(response.hitokoto).css('display', '-webkit-box');
                             if (response.from_who!=null && response.from_who!= "null" && response.from_who != "" && response.from_who != undefined){
