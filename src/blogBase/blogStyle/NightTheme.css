@@ -60,14 +60,14 @@ body,#main,#home{
     background: #1f1f2d!important;
 }
 .notice_time{
-  color: #b3c7ff!important;
+    color: #b3c7ff!important;
 }
 .notice_description{
     color: rgb(255, 196, 172) !important;
 }
 
 /*body{*/
-    /*background:#333333!important;*/
+/*background:#333333!important;*/
 /*}*/
 /*列表页样式*/
 .day,.entrylistItem{
@@ -218,7 +218,7 @@ font{
     color:#cfcfcf;
 }
 strong{
-color:#FF8080;
+    color:#FF8080;
 }
 li p font{
     color: var(--TextColor3);

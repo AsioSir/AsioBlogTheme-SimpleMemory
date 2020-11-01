@@ -60,11 +60,13 @@ function AnalyticEmotion(s) {
 				if(uSinaEmotionsHt.containsKey(sArr[i])) {
 					//<img src="url" class="emotionImg">
 					// var reStr = "<img src=\"" + uSinaEmotionsHt.get(sArr[i]) + "\" class=\"emotionImg\">";
-					var reStr = "![](" + uSinaEmotionsHt.get(sArr[i]) + ")";
+					// var reStr = "![](" + uSinaEmotionsHt.get(sArr[i]) + "){class=\"emotionImg\"}";
+					var reStr = window.emotion.prevEmotionHtml + uSinaEmotionsHt.get(sArr[i]) + window.emotion.endEmotionHtml;
 					s = s.replace(sArr[i], reStr);
 				}
 			}
 		}
+
 		// sArr = s.match(/\[.*?\]/g);
 		// if(null!=sArr && '' != sArr){
 		// 	for(var i = 0; i < sArr.length; i++){

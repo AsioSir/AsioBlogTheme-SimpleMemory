@@ -42,7 +42,7 @@
         --HCOLOR4: #66CDAA;
         --HCOLOR5: #00ae9d;
 
-            /*关联博客颜色*/
+        /*关联博客颜色*/
         --AsioRPColor: #867892;
         --CsdnColor: #FF9900;
 
@@ -87,7 +87,7 @@
         content: '';
         background-repeat: no-repeat;
         background-position: center;
-        opacity: 0.18;
+        opacity: 0.28;
         position: fixed;
         top: 0;
         left: 0;
@@ -1359,9 +1359,10 @@
 
             .blog_comment_body img {
                 vertical-align: middle;
-                width: auto!important;
-                min-width: 32px!important;
-                min-height: 32px!important;
+                margin-top: -10px;
+                width: 25px!important;
+                min-width: 25px!important;
+                min-height: 25px!important;
             }
 
             .blog_comment_body br {
@@ -1532,6 +1533,8 @@
 .hcolor-5 font, .hcolor-1 .dev__title, .hcolor-1 .dev__fe i, .hcolor-1 .dev__slash, .hcolor-1  .dev__ux i{
     color:  var(--HCOLOR5)!important;
 }
+
+
 .scolor-1 strong{
     color: #AFE2E3 !important;
 }
@@ -1544,42 +1547,62 @@
 .scolor-4 strong{
     color: #FF9966!important;
 }
+.scolor-5 strong{
+    color: #CC88FF!important;
+}
+.scolor-6 strong{
+    color: #33cccc!important;
+}
+.scolor-7 strong{
+    color: #aa99FF!important;
+}
+
+
 .color1-1{
-	color: #669999!important;
+    color: #669999!important;
 }
 .color1-2{
-	color: #CC6666!important;
+    color: #CC6666!important;
 }
 .color1-3{
-	color: #00a6ac!important;
+    color: #00a6ac!important;
 }
 .color1-4{
-	color: #FF6633!important;
+    color: #FF6633!important;
 }
 .color1-5{
-	color: #FF3366!important;
+    color: #FF3366!important;
 }
 .color1-6{
-	color: #00BFFF!important;
+    color: #00BFFF!important;
 }
 .color1-7{
-	color: #66FF66!important;
+    color: #66FF66!important;
 }
 .color1-8{
-	color: #29B4D1!important;
+    color: #29B4D1!important;
 }
 .color1-9{
-	color: #aa99FF!important;
+    color: #aa99FF!important;
 }
 .color1-10{
-	color: #FF33FF!important;
+    color: #FF33FF!important;
 }
 .color1-11{
-	color: #FF9900!important;
+    color: #FF9900!important;
 }
 .color1-12{
-	color: #CC88FF!important;
+    color: #CC88FF!important;
 }
 .color1-13{
     color: #33cccc!important;
+}
+.color1-14{
+    color: #ffaaaa!important;
+}
+.color1-15{
+    color: #55eeee!important;
+}
+.color1-16{
+    color: #9d9d9d!important;
 }

@@ -920,7 +920,6 @@ function Base() {
                 break;
 
             case "jinrishici":
-            default: // 今日诗词
                 settings = {
                     "async": true,
                     "crossDomain": true,
@@ -939,6 +938,40 @@ function Base() {
                     bndongJs.setDomHomePosition();
                     return false;
                 });
+                break;
+
+            case "hitokoto":
+            default: // 一言
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://v1.hitokoto.cn' +  window.cnblogsConfig.hitokotoType,
+                    dataType: 'json',
+                    jsonp: 'callback',
+                    jsonpCallback: 'hitokoto',
+                    success (response) {
+                        tools.consoleText("每日一言" + url + '\n' + response.hitokoto,'random')
+                        if (response.id != null && response.id!=undefined && response.id!=""){
+                            $('#hitokoto').text(response.hitokoto).css('display', '-webkit-box');
+                            if (response.from_who!=null && response.from_who!= "null" && response.from_who != "" && response.from_who != undefined){
+                                $('#hitokotoAuthor').text('《'+response.from + '》'+' - ' + response.from_who).show();
+                            } else {
+                                $('#hitokotoAuthor').text(response.from).show();
+                            }
+                        }else {
+                            var listIndex = tools.randomNum(0, topTitleList.length - 1);
+                            $('#hitokoto').text(topTitleList[listIndex]).css('display', '-webkit-box');
+                        }
+                        bndongJs.setDomHomePosition();
+                        return false;
+
+                    },
+                    error () {
+                        var listIndex = tools.randomNum(0, topTitleList.length - 1);
+                        $('#hitokoto').text(topTitleList[listIndex]).css('display', '-webkit-box');
+                        bndongJs.setDomHomePosition();
+                        return false;
+                    }
+                })
                 break;
         }
     };
