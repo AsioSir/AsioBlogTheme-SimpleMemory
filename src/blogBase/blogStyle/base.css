@@ -3456,9 +3456,11 @@ blockquote p {
 }
 
 #rightDashang i {
-    font-size: 32px;
+    font-size: 28px!important;
     font-weight: 500;
 }
+
+
 
 #attention:hover, #rightBuryit:hover, #rightDiggit:hover, #rightDashang:hover, #toUpDown:hover {
     opacity: 1;

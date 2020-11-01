@@ -1493,7 +1493,6 @@ function Base() {
                 rightMenu.prepend(rightDashangHtml);
                 bndongJs.rightMenuMous('#rightDashang', '.rightDanshanSpan');
             }
-
             bndongJs.clearIntervalTimeId(timeIds.setNotHomeRightMenuTId);
         }
     }

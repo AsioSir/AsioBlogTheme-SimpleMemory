@@ -1,5 +1,5 @@
 window.cnblogsConfig = {
-    GhVersions    : 'v2020.11.1', // 版本
+    GhVersions    : 'master', // 版本
     blogUser      : "༺ཌ༈君☠纤༈ད༻", // 用户名
     blogAvatar    : "https://pic.cnblogs.com/avatar/1924746/20200215183155.png", // 用户头像
     blogStartDate : "2020-1-17", // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
@@ -110,7 +110,7 @@ if (initCheck()) {
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
-        GhVersions: 'v2020.11.1',   //GitHub发布版本或提交哈希值，根据版本加载代码。
+        GhVersions: 'master',   //GitHub发布版本或提交哈希值，根据版本加载代码。
         CnVersions: "",
         codeMaxHeight: true,  //代码最高限制，超过长度的70%scroll
         blogUser: "",   //用户昵称，默认抓取博客园用户名
@@ -274,6 +274,7 @@ if (initCheck()) {
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201935ACG%E2%9D%A4%E5%AD%90%E8%A1%BF%E9%98%817.jpg",
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg",
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201949ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8318.jpg"
+        //    https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/bg/2.jpg
         ],
         homeBannerText: "",//主页banner上的标语，设置此选项会固定显示文字，默认为空，自动获取一句
         homeBannerTextType: "hitokoto",//主页 banner 上的标语获取源，默认为 hitokoto 每次刷新随机获取一句

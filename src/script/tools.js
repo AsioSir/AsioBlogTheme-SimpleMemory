@@ -58,7 +58,7 @@ function myTools() {
             case 'single':
                 var colorList = [colors.red, colors.orange, colors.yellow, colors.green, colors.teal, colors.blue, colors.purple, colors.brown];
                 var ind = tools.randomNum(0, colorList.length - 1);
-                console.log('%c'+list.join('\n'), colorList[ind]);
+                console.log('%c'+list+'\n', colorList[ind]);
                 break;
             default:
                 console.log('%c'+list.join('\n'), colors.gray);
