@@ -273,7 +273,7 @@ if (initCheck()) {
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201931ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8127.jpg",
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201935ACG%E2%9D%A4%E5%AD%90%E8%A1%BF%E9%98%817.jpg",
             "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201949ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8318.jpg"
+            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg"
         //    https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/bg/2.jpg
         ],
         homeBannerText: "",//主页banner上的标语，设置此选项会固定显示文字，默认为空，自动获取一句
