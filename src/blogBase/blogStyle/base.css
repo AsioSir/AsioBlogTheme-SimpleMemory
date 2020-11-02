@@ -3469,7 +3469,8 @@ blockquote p {
 
 .rightMenuSpan {
     position: absolute;
-    left: -150px;
+    left: -156px;
+    /*left: -120px;*/
     font-size: 14px;
     font-weight: 700;
     width: 140px;
@@ -3479,6 +3480,7 @@ blockquote p {
 
 .rightDanshanSpan {
     bottom: -120px;
+    /*bottom: 68px;*/
 }
 
 .ds-pay {
