@@ -107,6 +107,51 @@ if (initCheck()) {
         '<div id="bottomProgressBar"></div>' +
         '<div id="rightMenu"></div>';
 
+    var CnVersions = "master"
+    window.cnblogsImg = {
+        prevImgUrl: "https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@"+ CnVersions + "/img/bg/",
+        //元泱境
+        YYJIMG: ["元泱境27.jpg", "元泱境59.jpg"],
+        //兽耳娘
+        SENIMG: ["兽耳娘3.jpg", "兽耳娘21.jpg"],
+        //初音少女
+        CYSNIMG: ["初音少女2.jpg", "初音少女20.jpg"],
+        //双子星
+        SZXIMG: ["双子星13.jpg", "双子星17.jpg", "双子星34.jpg"],
+        //多子星
+        DZXIMG: ["多子星7.jpg", "多子星11.jpg", "多子星12.jpg", "多子星13.jpg", "多子星16.jpg", "多子星17.jpg", "多子星18.jpg", "多子星28.jpg"],
+        //天元境
+        TYJIMG: ["天元境6.jpg", "天元境20.jpg", "天元境23.jpg", "天元境24.jpg", "天元境27.jpg"],
+        //子衿阁
+        ZJGIMG: ["子衿阁7.jpg", "子衿阁12.jpg"],
+        //拉姆雷姆
+        LMLMIMG: ["拉姆雷姆4.jpg", "拉姆雷姆10.jpg"],
+        //暗黑系
+        AHXIMG: ["暗黑系24.jpg"],
+        //海蓝星
+        HNXIMG: ["海蓝星10.jpg", "海蓝星11.jpg"],
+        //红颜阁
+        HYGIMG: ["红颜阁26.jpg", "红颜阁27.jpg", "红颜阁38.jpg", "红颜阁42.jpg"],
+        //绿野仙踪
+        NYXZIMG: ["绿野仙踪1.jpg", "绿野仙踪40.jpg"],
+        //芙蓉阁
+        FRGIMG: ["芙蓉阁25.jpg"],
+        //萌白系
+        MBXIMG: ["萌白系8.jpg"],
+        //萌系少女
+        MXSNIMG: ["萌系少女23.jpg", "萌系少女38.jpg", "萌系少女42.jpg", "萌系少女46.jpg", "萌系少女54.jpg", "萌系少女55.jpg"],
+        //轻风阁
+        QFGIMG: ["轻风阁27.jpg"],
+        //迷梦亭
+        MMTIMG: ["迷梦亭5.jpg", "迷梦亭9.jpg", "迷梦亭12.jpg"],
+        //鬼刀
+        GDIMG: ["鬼刀16.jpg", "鬼刀30.jpg", "鬼刀43.jpg", "鬼刀52.jpg", "鬼刀61.jpg", "鬼刀68.jpg", "鬼刀74.jpg", "鬼刀82.jpg", "鬼刀88.jpg", "鬼刀148.jpg"],
+        //黑颜少女
+        HYSNIMG: ["黑颜少女6.jpg"],
+        //默郁亭
+        MYTIMG: ["默郁亭50.jpg"]
+    }
+
     window.cnblogsConfigDefault = {
         GhUserName: 'AsioSir',   //GitHub用户名
         GhRepositories: 'AsioBlogTheme-SimpleMemory',  //GitHub仓库名
@@ -207,74 +252,115 @@ if (initCheck()) {
             parallaxAmount: -0.2,
             animateSections: true
         },
+        //顶部图片前缀
         homeTopImg: [//主页banner图片Url，推荐尺寸>= 1920*1080，支持多张，每次刷新随机设置一张
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217113617ACG%E2%99%A5%E6%9A%97%E9%BB%91%E7%B3%BB24.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114042ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F12.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114147ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F16.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200320ACG%E2%99%A5%E9%AC%BC%E5%88%8074.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200334ACG%E2%99%A5%E9%AC%BC%E5%88%8088.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200713ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD5.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200725ACG%E2%99%A5%E9%AC%BC%E5%88%8016.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200743ACG%E2%99%A5%E9%AC%BC%E5%88%8068.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200803ACG%E2%9D%A4%E9%BB%98%E9%83%81%E4%BA%AD50.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200815ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8327.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200826ACG%E2%9D%A4%E9%AC%BC%E5%88%8061.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200836ACG%E2%9D%A4%E9%AC%BC%E5%88%8043.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200842ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD9.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200852ACG%E2%9D%A4%E6%BC%AB%E5%AF%BB%E5%B0%91%E5%A5%B38.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200913ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B355.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200927ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%836.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200934ACG%E2%99%A5%E8%8A%99%E8%93%89%E9%98%8125.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200943ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F17.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200955ACG%E2%9D%A4%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%8610.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201006ACG-%E5%8F%8C%E5%AD%90%E6%98%9F13.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201015ACG-%E5%8F%8C%E5%AD%90%E6%98%9F17.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201030ACG-%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B32.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201101ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B346.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201108ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B342.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201118ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B354.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201139ACG-%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA40.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201147ACG-%E5%85%BD%E8%80%B3%E5%A8%9821.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201155ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F28.png",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201204ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8324.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201213ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8142.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201221ACG%E2%9D%A4%E8%90%8C%E7%99%BD%E7%B3%BB8.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201229ACG%E2%9D%A4%E8%BD%BB%E9%A3%8E%E9%98%8127.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201236ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F11.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201246ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F11.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201339ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%864.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201353ACG%E2%9D%A4%E9%BB%91%E9%A2%9C%E5%B0%91%E5%A5%B36.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201359ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8359.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201407ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F13.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201420ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F18.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201545ACG-%E7%BA%A2%E9%A2%9C%E9%98%8138.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201554ACG%E2%99%A5%E9%AC%BC%E5%88%8082.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201607ACG%E2%9D%A4%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B320.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201617ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8327.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201628ACG%E2%99%A5%E9%AC%BC%E5%88%8052.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201635ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8323.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201641ACG%E2%9D%A4%E9%AC%BC%E5%88%80148.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201649ACG-%E5%85%BD%E8%80%B3%E5%A8%983.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201656ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F7.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201705ACG-%E5%AD%90%E8%A1%BF%E9%98%8112.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201714ACG%E2%99%A5%E9%AC%BC%E5%88%8030.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201723ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD12.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201739ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F34.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201840ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8126.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201852ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B323.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201904ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B338.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201909ACG%E2%9D%A4%E5%8F%8C%E5%AD%90%E6%98%9F32.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201913ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F15.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201918ACG%E2%9D%A4%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA1.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201923ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F10.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201927ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%867.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201931ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8127.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201935ACG%E2%9D%A4%E5%AD%90%E8%A1%BF%E9%98%817.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg",
-            "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg"
-        //    https://cdn.jsdelivr.net/gh/AsioSir/AsioBlogTheme-SimpleMemory@master/img/bg/2.jpg
+            //元泱境
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.YYJIMG[randomNum(0, window.cnblogsImg.YYJIMG.length-1)],
+            //兽耳娘
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.SENIMG[randomNum(0, window.cnblogsImg.SENIMG.length-1)],
+            //初音少女
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.CYSNIMG[randomNum(0, window.cnblogsImg.CYSNIMG.length-1)],
+            //双子星
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.SZXIMG[randomNum(0, window.cnblogsImg.SZXIMG.length-1)],
+            //多子星
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.DZXIMG[randomNum(0, window.cnblogsImg.DZXIMG.length-1)],
+            //天元境
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.TYJIMG[randomNum(0, window.cnblogsImg.TYJIMG.length-1)],
+            //子衿阁
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.ZJGIMG[randomNum(0, window.cnblogsImg.ZJGIMG.length-1)],
+            //拉姆雷姆
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.LMLMIMG[randomNum(0, window.cnblogsImg.LMLMIMG.length-1)],
+            //暗黑系
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.AHXIMG[randomNum(0, window.cnblogsImg.AHXIMG.length-1)],
+            //海蓝星
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.HNXIMG[randomNum(0, window.cnblogsImg.HNXIMG.length-1)],
+            //红颜阁
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.HYGIMG[randomNum(0, window.cnblogsImg.HYGIMG.length-1)],
+            //绿野仙踪
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.NYXZIMG[randomNum(0, window.cnblogsImg.NYXZIMG.length-1)],
+            //芙蓉阁
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.FRGIMG[randomNum(0, window.cnblogsImg.FRGIMG.length-1)],
+            //萌白系
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.MBXIMG[randomNum(0, window.cnblogsImg.MBXIMG.length-1)],
+            //萌系少女
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.MXSNIMG[randomNum(0, window.cnblogsImg.MXSNIMG.length-1)],
+            //轻风阁
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.QFGIMG[randomNum(0, window.cnblogsImg.QFGIMG.length-1)],
+            //迷梦亭
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.MMTIMG[randomNum(0, window.cnblogsImg.MMTIMG.length-1)],
+            //鬼刀
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.GDIMG[randomNum(0, window.cnblogsImg.GDIMG.length-1)],
+            //黑颜少女
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.HYSNIMG[randomNum(0, window.cnblogsImg.HYSNIMG.length-1)],
+            //默郁亭
+            window.cnblogsImg.prevImgUrl + window.cnblogsImg.MYTIMG[randomNum(0, window.cnblogsImg.MYTIMG.length-1)]
+
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217113617ACG%E2%99%A5%E6%9A%97%E9%BB%91%E7%B3%BB24.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114042ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F12.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200217114147ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F16.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200320ACG%E2%99%A5%E9%AC%BC%E5%88%8074.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200334ACG%E2%99%A5%E9%AC%BC%E5%88%8088.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200713ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD5.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200725ACG%E2%99%A5%E9%AC%BC%E5%88%8016.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200743ACG%E2%99%A5%E9%AC%BC%E5%88%8068.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200803ACG%E2%9D%A4%E9%BB%98%E9%83%81%E4%BA%AD50.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200815ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8327.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200826ACG%E2%9D%A4%E9%AC%BC%E5%88%8061.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200836ACG%E2%9D%A4%E9%AC%BC%E5%88%8043.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200842ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD9.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200852ACG%E2%9D%A4%E6%BC%AB%E5%AF%BB%E5%B0%91%E5%A5%B38.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200913ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B355.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200927ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%836.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200934ACG%E2%99%A5%E8%8A%99%E8%93%89%E9%98%8125.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200943ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F17.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219200955ACG%E2%9D%A4%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%8610.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201006ACG-%E5%8F%8C%E5%AD%90%E6%98%9F13.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201015ACG-%E5%8F%8C%E5%AD%90%E6%98%9F17.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201030ACG-%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B32.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201101ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B346.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201108ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B342.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201118ACG%E2%9D%A4%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B354.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201139ACG-%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA40.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201147ACG-%E5%85%BD%E8%80%B3%E5%A8%9821.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201155ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F28.png",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201204ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8324.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201213ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8142.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201221ACG%E2%9D%A4%E8%90%8C%E7%99%BD%E7%B3%BB8.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201229ACG%E2%9D%A4%E8%BD%BB%E9%A3%8E%E9%98%8127.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201236ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F11.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201246ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F11.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201339ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%864.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201353ACG%E2%9D%A4%E9%BB%91%E9%A2%9C%E5%B0%91%E5%A5%B36.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201359ACG%E2%99%A5%E5%85%83%E6%B3%B1%E5%A2%8359.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201407ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F13.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201420ACG%E2%99%A5%E5%A4%9A%E5%AD%90%E6%98%9F18.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201545ACG-%E7%BA%A2%E9%A2%9C%E9%98%8138.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201554ACG%E2%99%A5%E9%AC%BC%E5%88%8082.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201607ACG%E2%9D%A4%E5%88%9D%E9%9F%B3%E5%B0%91%E5%A5%B320.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201617ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8327.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201628ACG%E2%99%A5%E9%AC%BC%E5%88%8052.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201635ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8323.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201641ACG%E2%9D%A4%E9%AC%BC%E5%88%80148.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201649ACG-%E5%85%BD%E8%80%B3%E5%A8%983.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201656ACG%E2%9D%A4%E5%A4%9A%E5%AD%90%E6%98%9F7.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201705ACG-%E5%AD%90%E8%A1%BF%E9%98%8112.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201714ACG%E2%99%A5%E9%AC%BC%E5%88%8030.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201723ACG%E2%9D%A4%E8%BF%B7%E6%A2%A6%E4%BA%AD12.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201739ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F34.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201840ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8126.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201846ACG%E2%99%A5%E5%A4%A9%E5%85%83%E5%A2%8320.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201852ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B323.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201904ACG%E2%99%A5%E8%90%8C%E7%B3%BB%E5%B0%91%E5%A5%B338.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201909ACG%E2%9D%A4%E5%8F%8C%E5%AD%90%E6%98%9F32.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201913ACG%E2%99%A5%E5%8F%8C%E5%AD%90%E6%98%9F15.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201918ACG%E2%9D%A4%E7%BB%BF%E9%87%8E%E4%BB%99%E8%B8%AA1.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201923ACG%E2%99%A5%E6%B5%B7%E8%93%9D%E6%98%9F10.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201927ACG-%E6%8B%89%E5%A7%86%E9%9B%B7%E5%A7%867.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201931ACG%E2%99%A5%E7%BA%A2%E9%A2%9C%E9%98%8127.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201935ACG%E2%9D%A4%E5%AD%90%E8%A1%BF%E9%98%817.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg",
+            // "https://images.cnblogs.com/cnblogs_com/asio/1649321/o_200219201942ACG-%E7%BA%A2%E9%A2%9C%E9%98%8136.jpg"
         ],
         homeBannerText: "",//主页banner上的标语，设置此选项会固定显示文字，默认为空，自动获取一句
         homeBannerTextType: "hitokoto",//主页 banner 上的标语获取源，默认为 hitokoto 每次刷新随机获取一句
@@ -432,7 +518,7 @@ if (initCheck()) {
         * */
     };
 
-    window.cnblogsConfig = $.extend( true, window.cnblogsConfigDefault, window.cnblogsConfig );
+    window.cnblogsConfig = $.extend( true, window.cnblogsConfigDefault, window.cnblogsConfig,window.cnblogsImg );
     getVersionConfig();
 
 } else {
@@ -601,3 +687,15 @@ function setFileNameMin(file, directory) {
     suffix != null && fileArr.push(suffix);
     return (typeof directory !== 'undefined' ? ('src/' + directory + '/' + fileArr.join('.')) : (fileArr.join('.')));
 }
+
+
+function randomNum(minNum,maxNum) {
+    switch(arguments.length){
+        case 1:
+            return parseInt(Math.random()*minNum+1); break;
+        case 2:
+            return parseInt(Math.random()*(maxNum-minNum+1)+minNum); break;
+        default:
+            return 0; break;
+    }
+};
